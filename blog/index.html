@@ -73,6 +73,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 h1,h2,h3,.corpo{overflow-wrap:break-word}
 .corpo img,.corpo video,.corpo iframe{max-width:100%;height:auto;margin-top:20px;border-radius:4px}
 .corpo table{display:block;max-width:100%;overflow-x:auto;margin-top:16px}
+.corpo table{border-collapse:collapse;font-size:15px}.corpo th,.corpo td{padding:10px 12px;border:1px solid var(--b);text-align:left;vertical-align:top}.corpo th{background:var(--soft)}.corpo small{color:#6b655f}
 @media(hover:none){.btn:hover{transform:none}}
 @media(max-width:1000px){.feat{grid-template-columns:1fr}.posts{grid-template-columns:1fr 1fr}.nav ul{display:none}.menu-btn{display:inline-flex}.nav.open ul{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;gap:0;padding:6px 20px 14px;background:#2D2D2D;border-top:1px solid rgba(255,255,255,.12);box-shadow:0 14px 24px rgba(0,0,0,.25)}.nav.open ul a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px}}
 @media(max-width:620px){.bh{padding:64px 0 40px}.bh h1{font-size:40px}.bh p{font-size:16px}h2{font-size:31px}.feat .tx{padding:28px 22px}.feat h2{font-size:30px}.feat .side b{font-size:64px}.posts{grid-template-columns:1fr}.end h2{font-size:32px}.art h1{font-size:37px}.resumo{font-size:21px}.logo small{display:none}.autor{flex-direction:column;align-items:flex-start}
@@ -169,35 +170,81 @@ var POSTS=[
  t:"CET, juros e tarifas: como ler o custo real do seu financiamento",
  r:"A parcela cabe no bolso, mas quanto o crédito custa de verdade? Um roteiro para ler o contrato linha por linha.",
  c:`<p>O CET (Custo Efetivo Total) reúne juros, tarifas, seguros e outros encargos em uma única taxa. Por isso, ao comparar propostas, olhe o CET e não apenas o valor da parcela.</p>
+<h2>O que entra no CET</h2>
+<p>Pela regra do Conselho Monetário Nacional (Resolução CMN 4.881/2020), o CET considera tudo o que o cliente paga pela operação, e não só os juros:</p>
+<ul><li>juros e amortização do valor emprestado;</li><li>tarifas e tributos, como o IOF;</li><li>seguros e outros serviços ligados ao contrato;</li><li>despesas com serviços de terceiros, quando quem paga é o cliente.</li></ul>
+<p>Ele é expresso em taxa percentual anual e considera as datas em que o dinheiro foi liberado e em que cada parcela vence.</p>
+<h2>O banco precisa informar o CET antes</h2>
+<p>A instituição financeira deve informar o CET e apresentar o demonstrativo de cálculo <b>antes</b> da contratação. Se o contrato for fechado, o demonstrativo deve constar nele de forma destacada. Também deve aparecer na publicidade que anuncia taxa de juros.</p>
 <h2>O que conferir no contrato</h2>
-<ul><li>A taxa de juros mensal e anual.</li><li>Tarifas e seguros incluídos no valor financiado.</li><li>O valor total a pagar ao final do contrato.</li></ul>
-<div class="call"><b>Em resumo</b><p>Parcela baixa não significa crédito barato. Compare o valor total pago.</p></div>
-<p>[Continue o texto aqui.]</p>`},
+<ul><li>A taxa de juros mensal e anual.</li><li>Tarifas e seguros incluídos no valor financiado.</li><li>O valor total a pagar ao final do contrato.</li><li>O CET mensal e anual, com o demonstrativo.</li><li>O valor que você realmente recebe, depois de descontados os encargos pagos na hora.</li></ul>
+<h2>Um exemplo (fictício) para enxergar a diferença</h2>
+<p>Duas propostas para receber R$ 10.000 em 24 parcelas:</p>
+<table><thead><tr><th></th><th>Proposta A</th><th>Proposta B</th></tr></thead><tbody>
+<tr><td>Parcela</td><td>R$ 560</td><td>R$ 520</td></tr>
+<tr><td>Total pago</td><td>R$ 13.440</td><td>R$ 12.480</td></tr>
+<tr><td>Valor financiado</td><td>R$ 10.900 (inclui R$ 900 de seguro e tarifas)</td><td>R$ 10.000</td></tr>
+<tr><td>Juros que o banco destaca</td><td>cerca de 1,75% ao mês</td><td>cerca de 1,85% ao mês</td></tr>
+<tr><td>CET</td><td>cerca de 2,51% ao mês (34,7% ao ano)</td><td>cerca de 1,85% ao mês (24,7% ao ano)</td></tr>
+</tbody></table>
+<p>Quem olhasse só a taxa de juros destacada acharia a Proposta A mais barata. O CET mostra o contrário: os R$ 900 embutidos fazem o crédito custar bem mais. Valores ilustrativos, calculados para este texto.</p>
+<h2>Seguro e tarifas: nem tudo é obrigatório</h2>
+<p>Seguros e serviços agregados costumam entrar no valor financiado sem muito destaque. O consumidor tem o direito de saber o que está contratando e quanto custa. O STJ já decidiu que, em contratos bancários, o consumidor não pode ser obrigado a contratar seguro com a seguradora indicada pelo banco (Tema 972). Confira o texto da decisão antes de usá-la em qualquer caso.</p>
+<div class="call"><b>Atenção</b><p>CET alto não é, sozinho, prova de abuso. A análise leva em conta o tipo de operação, o prazo, as garantias e as taxas praticadas no mercado. Mas ele é o melhor ponto de partida para comparar propostas e para perguntar ao banco o que cada cobrança significa.</p></div>
+<h2>Roteiro rápido antes de assinar</h2>
+<ol><li>Peça o CET e o demonstrativo de cálculo por escrito.</li><li>Compare pelo menos duas propostas pelo CET e pelo valor total.</li><li>Pergunte quais seguros e tarifas estão incluídos e se é possível retirá-los.</li><li>Confira o valor que será liberado na sua conta.</li><li>Guarde a proposta e o contrato.</li></ol>
+<div class="call"><b>Em resumo</b><p>Parcela baixa não significa crédito barato. Compare o CET e o valor total pago, e peça ao banco que explique cada item.</p></div>
+<p><small>Texto informativo. Não substitui a análise do seu contrato, que depende dos documentos e dos fatos do seu caso.</small></p>`},
 {s:"golpe-do-pix-primeiros-passos",tipo:"Artigo",tema:"Golpes e fraudes",d:"2026-09-14",
  t:"Caiu no golpe do Pix? Os primeiros passos depois de perceber a fraude",
  r:"O que fazer nas primeiras horas, o que guardar como prova e quando a responsabilidade do banco entra na conversa.",
  c:`<p>O tempo conta. Nas primeiras horas, a prioridade é comunicar o banco e reunir provas.</p>
-<ol><li>Acione o banco pelos canais oficiais e peça o bloqueio e a contestação da transação.</li><li>Registre um boletim de ocorrência.</li><li>Guarde comprovantes, prints de conversas e protocolos.</li></ol>
+<h2>O que fazer logo</h2>
+<ol><li>Acione o banco pelos canais oficiais e peça o bloqueio e a contestação da transação. Peça o número do protocolo.</li><li>Solicite a abertura do MED (Mecanismo Especial de Devolução), explicado mais abaixo.</li><li>Registre um boletim de ocorrência.</li><li>Guarde comprovantes, prints de conversas e protocolos.</li><li>Troque as senhas, bloqueie cartões e desconfie de aplicativos que você instalou a pedido de terceiros.</li></ol>
 <div class="call"><b>Atenção</b><p>Os prazos para contestar variam conforme a regra vigente. Confirme-os com o seu banco.</p></div>
-<p>[Continue o texto aqui.]</p>`},
+<h2>O que é o MED</h2>
+<p>O MED é o mecanismo do Banco Central que permite rastrear e bloquear valores enviados por Pix em casos de golpe ou fraude. O pedido é feito pelo banco de onde o dinheiro saiu, e o banco aciona a instituição que recebeu.</p>
+<ul><li><b>Prazo:</b> segundo as regras noticiadas em 2026, a vítima pode acionar o MED em até 80 dias contados da transação. Quanto antes, melhor: o dinheiro pode ser transferido ou sacado.</li><li><b>Devolução não é automática:</b> depende de haver saldo na conta que recebeu e da análise das instituições.</li><li><b>Fora do MED:</b> pagamento a chave errada por engano e problemas comerciais, como produto não entregue ou com defeito, não se enquadram como fraude.</li></ul>
+<h2>Quando a responsabilidade do banco entra na conversa</h2>
+<p>O banco tem dever de segurança nas operações que oferece. O STJ, na Súmula 479, reconhece a responsabilidade das instituições financeiras por danos causados por fraudes e delitos de terceiros em operações bancárias.</p>
+<p>Na prática, a Justiça costuma analisar cada caso. Pesam, entre outros pontos, se a transação fugia do perfil do cliente (valor, horário, aparelho novo), se o banco poderia ter barrado a operação e se agiu com rapidez depois do aviso. Quando o próprio cliente fornece senha ou código, a discussão fica mais difícil e há decisões em sentidos diferentes. Não há garantia de resultado.</p>
+<h2>O que guardar como prova</h2>
+<ul><li>Comprovante da transferência e extrato do dia.</li><li>Conversas, áudios, números de telefone, perfis e links usados pelo golpista.</li><li>Protocolos de atendimento e o horário em que você avisou o banco.</li><li>Boletim de ocorrência.</li><li>Prints de qualquer aviso de segurança que o banco tenha enviado antes da transação.</li></ul>
+<h2>Erros que atrapalham</h2>
+<ul><li><b>Esperar para ver se resolve:</b> cada hora a mais diminui a chance de bloquear o valor.</li><li><b>Apagar conversas e perfis:</b> são provas.</li><li><b>Pagar para “recuperar” o dinheiro:</b> falsos advogados e supostos recuperadores de valores cobram taxas adiantadas. É um segundo golpe.</li></ul>
+<div class="call"><b>Em resumo</b><p>Avise o banco na hora, peça o MED, registre o boletim de ocorrência e guarde tudo. Depois disso, avalie com calma, de preferência com orientação profissional, qual caminho seguir.</p></div>
+<p><small>Texto informativo. As regras do Pix mudam com frequência; confirme os prazos atuais com o seu banco e no site do Banco Central.</small></p>`},
 {s:"quatro-sistemas-um-calendario",tipo:"Bastidores",tema:"Rotina",d:"2026-09-10",
  t:"Quatro sistemas, um calendário: como organizo prazos no PJe, Eproc, Projudi e e-SAJ",
  r:"Cada tribunal tem seu sistema, e o prazo é um só. O método simples que ajuda a não perder nenhum.",
  c:`<p>Advogar em vários tribunais significa conviver com sistemas diferentes. O risco está em tratá-los como mundos separados.</p>
+<p>Cada sistema tem seu jeito de avisar: um mostra a intimação na tela inicial, outro manda e-mail, outro exige abrir o processo. Se cada um tiver o seu controle, cedo ou tarde um prazo escapa. A solução que funciona é mais simples do que parece: o aviso chega de lugares diferentes, mas o prazo vai para um lugar só.</p>
 <h2>O que funciona na prática</h2>
 <ul><li>Um único calendário central para todos os prazos.</li><li>Conferência diária das intimações, em horário fixo.</li><li>Dupla checagem de todo prazo fatal.</li></ul>
-<p>[Conte aqui a sua rotina real.]</p>`},
+<h2>Como cada item funciona</h2>
+<p><b>Calendário central.</b> Todo prazo, de qualquer sistema, vira um evento no mesmo calendário. O título leva o número do processo, o ato a praticar e o sistema de origem (PJe, Eproc, Projudi ou e-SAJ). Assim, ao olhar o dia, não preciso lembrar onde cada coisa está.</p>
+<p><b>Conferência em horário fixo.</b> Abrir os quatro sistemas todos os dias, sempre no mesmo horário, vira hábito. O objetivo é que nenhuma intimação fique esperando um momento em que eu “lembre de olhar”.</p>
+<p><b>Dupla checagem do prazo fatal.</b> Ao lançar um prazo, confiro a data de início, a contagem (dias úteis) e feriados locais. Para prazos fatais, uma segunda conferência, em outro momento, evita o erro de contagem, que é o mais comum.</p>
+<h2>Um cuidado extra: prazo interno</h2>
+<p>O prazo que vai para o calendário não precisa ser o último dia. Trabalho com uma data interna alguns dias antes, para ter margem diante de instabilidade do sistema, de um documento que não chegou ou de um imprevisto.</p>
+<div class="call"><b>Em resumo</b><p>Vários sistemas, um calendário. Hora fixa para conferir, dupla checagem para o que é fatal e uma data interna antes do vencimento.</p></div>
+<p><small>Este é o método que uso e que pode ser adaptado à sua rotina. Não cita processos nem clientes.</small></p>`},
 {s:"novos-estudos-registral",tipo:"Atualização",tema:"Carreira",d:"2026-09-01",
  t:"Novos estudos: Direito Imobiliário, Notarial e Registral",
  r:"Por que decidi ampliar a formação e como isso conversa com a minha atuação em financiamentos.",
- c:`<p>[Conte o que está estudando, por que escolheu o tema e o que pretende aplicar no dia a dia do escritório.]</p>
-<div class="call"><b>Por que isso importa</b><p>[Explique a ligação com os casos de financiamento e garantias.]</p></div>`},
+ c:`<p>Estou ampliando minha formação para o Direito Imobiliário, Notarial e Registral. A decisão veio da prática: quem atua com financiamento imobiliário lida, o tempo todo, com documentos que nascem nos cartórios.</p>
+<h2>O que pretendo estudar</h2>
+<ul><li>A matrícula do imóvel e o que ela informa: proprietário, ônus, averbações e restrições.</li><li>O registro da alienação fiduciária e as consequências do atraso, incluindo a consolidação da propriedade (Lei 9.514/1997).</li><li>A função do notário e do registrador na segurança dos negócios.</li></ul>
+<h2>Onde isso aparece na minha atuação</h2>
+<p>Em financiamento, o contrato é só uma parte da história. A garantia, o registro e o histórico do imóvel também contam. Entender melhor essa fase ajuda a ler o contrato com mais critério, a orientar o cliente sobre riscos e prazos e a identificar quando a discussão está no contrato ou no registro.</p>
+<div class="call"><b>Por que isso importa</b><p>Muitos problemas de financiamento imobiliário começam fora do contrato: uma averbação que faltou, um registro mal entendido ou uma consolidação de propriedade que o consumidor não esperava. Conhecer o caminho dentro do cartório permite agir antes, com mais segurança.</p></div>
+<p>Vou compartilhar aqui o que aprender e puder aplicar, sempre sem citar casos ou clientes.</p>`},
 {s:"registro-de-atividade-modelo",tipo:"Atividade",tema:"Carreira",d:"2026-08-25",
- t:"Registro de atividade: [nome do curso, evento ou audiência]",
- r:"Modelo para registrar o que foi feito, o que foi aprendido e o que muda na prática.",
- c:`<p>[Descreva o que aconteceu, onde e quando. Em seguida, o que você aprendeu.]</p>
-<ul><li>O que foi feito.</li><li>O que aprendi.</li><li>O que muda na minha prática.</li></ul>
-<p><b>Cuidado:</b> não cite nomes de clientes, número de processos nem detalhes sigilosos.</p>`}
+ t:"Registro de atividade: pós-graduação em Direito do Consumidor e o artigo sobre superendividamento",
+ r:"O que fiz, o que aprendi e o que mudou na minha prática depois de estudar o ciclo de consumo bancário.",
+ c:`<p>Na pós-graduação em Direito do Consumidor, desenvolvi o artigo <i>Responsabilidade dos fornecedores no ciclo de consumo bancário: da publicidade abusiva ao superendividamento do consumidor</i>. O texto acompanha a história do crédito desde a propaganda até a dívida que foge do controle.</p>
+<ul><li><b>O que foi feito:</b> pesquisa em doutrina, no CDC, na Lei 14.181/2021 e em decisões do STJ e de tribunais estaduais.</li><li><b>O que aprendi:</b> o endividamento excessivo raramente nasce de um único ato. Propaganda, contrato e concessão de crédito formam uma cadeia, e o banco tem deveres em cada elo.</li><li><b>O que muda na minha prática:</b> passo a olhar o histórico completo da contratação (oferta, informação prestada, capacidade de pagamento) e não só as cláusulas.</li></ul>
+<p>Publiquei uma versão em linguagem acessível no blog: <a href="?artigo=propaganda-de-credito-superendividamento">Da propaganda de crédito ao superendividamento: onde o banco responde</a>.</p>`}
 ];
 /* ===================================================================== */
 
