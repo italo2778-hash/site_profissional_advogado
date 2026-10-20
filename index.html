@@ -78,7 +78,10 @@ h2{font-size:40px}
 .area h3{font-size:22px}
 .area p{margin-top:10px;color:var(--t);font-size:14px;line-height:1.6;flex:1}
 .area span{margin-top:14px;color:var(--s);font-size:13px;font-weight:700}
-.area:hover span{text-decoration:underline}
+.area .acoes{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.area .acoes a{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 9px;border:1px solid var(--s);border-radius:4px;font-size:12px;font-weight:700;line-height:1.2;white-space:nowrap;transition:background .2s,color .2s}
+.area .sm{background:transparent;color:var(--s)}.area .sm:hover{background:var(--s);color:#fff}
+.area .ct{background:var(--s);color:#fff}.area .ct:hover{background:var(--d);border-color:var(--d)}
 
 /* diretrizes */
 .dir{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--b)}
@@ -230,16 +233,16 @@ footer{padding-bottom:96px}
 <section class="sec" id="atuacao">
   <div class="c">
     <h2>O que fazemos</h2>
-    <p class="lead">Áreas de atuação do escritório. Escolha a que mais se aproxima do seu caso e fale direto com a equipe.</p>
+    <p class="lead">Áreas de atuação do escritório. Escolha a que mais se aproxima do seu caso: leia mais sobre o tema ou fale direto com a equipe.</p>
     <div class="grid">
-      <a class="area" href="https://www.italobezerraadvogado.com.br/financiamento/"><h3>Financiamento de veículos</h3><p>Análise de juros, tarifas e encargos do contrato e defesa em ação de busca e apreensão.</p><span>Falar sobre este tema</span></a>
-      <a class="area" href="https://wa.me/5586999765214" data-t="cartão de crédito, cheque especial ou empréstimo"><h3>Cartão, cheque especial e empréstimos</h3><p>Revisão de dívidas que cresceram com juros e renegociações sucessivas.</p><span>Falar sobre este tema</span></a>
-      <a class="area" href="https://wa.me/5586999765214" data-t="análise de contrato bancário ou laudo técnico"><h3>Contratos e laudos técnicos</h3><p>Análise de contratos bancários e elaboração de laudos para embasar a sua situação.</p><span>Falar sobre este tema</span></a>
-      <a class="area" href="https://wa.me/5586999765214" data-t="bloqueio de conta ou de valores"><h3>Bloqueio de contas e valores</h3><p>Orientação quando há bloqueio de salário, conta ou outros valores.</p><span>Falar sobre este tema</span></a>
-      <a class="area" href="https://wa.me/5586999765214" data-t="golpe, fraude ou Pix"><h3>Golpes, fraudes e Pix</h3><p>Análise de transações não reconhecidas e de responsabilidade do banco.</p><span>Falar sobre este tema</span></a>
-      <a class="area" href="https://wa.me/5586999765214" data-t="negativação ou cobrança indevida"><h3>Negativação e cobranças indevidas</h3><p>Avaliação de inscrições em cadastros de inadimplentes e descontos não autorizados.</p><span>Falar sobre este tema</span></a>
-      <a class="area" href="https://wa.me/5586999765214" data-t="superendividamento"><h3>Superendividamento</h3><p>Caminhos legais para quem tem várias dívidas e não consegue pagar sem comprometer o sustento.</p><span>Falar sobre este tema</span></a>
-      <a class="area" href="https://wa.me/5586999765214" data-t="pensão alimentícia ou questão de família"><h3>Família e pensão alimentícia</h3><p>Orientação em pensão alimentícia e em questões de Direito de Família.</p><span>Falar sobre este tema</span></a>
+      <div class="area" data-t="financiamento de veículo"><h3>Financiamento de veículos</h3><p>Análise de juros, tarifas e encargos do contrato e defesa em ação de busca e apreensão.</p><div class="acoes"><a class="sm" href="/financiamento/" aria-label="Saiba mais sobre Financiamento de veículos">Saiba mais</a><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Financiamento de veículos">Entrar em contato</a></div></div>
+      <div class="area" data-t="cartão de crédito, cheque especial ou empréstimo"><h3>Cartão, cheque especial e empréstimos</h3><p>Revisão de dívidas que cresceram com juros e renegociações sucessivas.</p><div class="acoes"><a class="sm" href="/blog/o-que-e-cet-custo-efetivo-total-financiamento/" aria-label="Saiba mais sobre Cartão, cheque especial e empréstimos">Saiba mais</a><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Cartão, cheque especial e empréstimos">Entrar em contato</a></div></div>
+      <div class="area" data-t="análise de contrato bancário ou laudo técnico"><h3>Contratos e laudos técnicos</h3><p>Análise de contratos bancários e elaboração de laudos para embasar a sua situação.</p><div class="acoes"><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Contratos e laudos técnicos">Entrar em contato</a></div></div>
+      <div class="area" data-t="bloqueio de conta ou de valores"><h3>Bloqueio de contas e valores</h3><p>Orientação quando há bloqueio de salário, conta ou outros valores.</p><div class="acoes"><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Bloqueio de contas e valores">Entrar em contato</a></div></div>
+      <div class="area" data-t="golpe, fraude ou Pix"><h3>Golpes, fraudes e Pix</h3><p>Análise de transações não reconhecidas e de responsabilidade do banco.</p><div class="acoes"><a class="sm" href="/blog/caiu-no-golpe-do-pix-o-que-fazer/" aria-label="Saiba mais sobre Golpes, fraudes e Pix">Saiba mais</a><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Golpes, fraudes e Pix">Entrar em contato</a></div></div>
+      <div class="area" data-t="negativação ou cobrança indevida"><h3>Negativação e cobranças indevidas</h3><p>Avaliação de inscrições em cadastros de inadimplentes e descontos não autorizados.</p><div class="acoes"><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Negativação e cobranças indevidas">Entrar em contato</a></div></div>
+      <div class="area" data-t="superendividamento"><h3>Superendividamento</h3><p>Caminhos legais para quem tem várias dívidas e não consegue pagar sem comprometer o sustento.</p><div class="acoes"><a class="sm" href="/blog/superendividamento-o-que-e-e-como-renegociar-dividas/" aria-label="Saiba mais sobre Superendividamento">Saiba mais</a><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Superendividamento">Entrar em contato</a></div></div>
+      <div class="area" data-t="pensão alimentícia ou questão de família"><h3>Família e pensão alimentícia</h3><p>Orientação em pensão alimentícia e em questões de Direito de Família.</p><div class="acoes"><a class="ct wpp" href="https://wa.me/5586999765214" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato sobre Família e pensão alimentícia">Entrar em contato</a></div></div>
     </div>
   </div>
 </section>
@@ -349,11 +352,16 @@ footer{padding-bottom:96px}
 var NUM="5586999765214";
 document.getElementById("ano").textContent=new Date().getFullYear();
 
-// Cartões de atuação: abrem o WhatsApp com o tema já preenchido
-document.querySelectorAll(".area[data-t]").forEach(function(a){
-  var t="Olá! Gostaria de informações sobre "+a.dataset.t+".";
-  a.href="https://wa.me/"+NUM+"?text="+encodeURIComponent(t);
-  a.target="_blank";a.rel="noopener noreferrer";
+// Cartões de atuação: "Entrar em contato" abre o WhatsApp com o tema já preenchido
+document.querySelectorAll(".area[data-t]").forEach(function(c){
+  var t="Olá! Gostaria de informações sobre "+c.dataset.t+".";
+  var ct=c.querySelector(".ct");
+  if(ct)ct.href="https://wa.me/"+NUM+"?text="+encodeURIComponent(t);
+  var sm=c.querySelector(".sm");
+  if(sm)sm.addEventListener("click",function(){
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:"clique_saiba_mais",tema:c.dataset.t});
+  });
 });
 
 // Formulário → WhatsApp
@@ -375,7 +383,7 @@ window.addEventListener("resize",function(){if(innerWidth>1000)fecha()});
 document.querySelectorAll(".wpp").forEach(function(a){
   a.addEventListener("click",function(){
     window.dataLayer=window.dataLayer||[];
-    window.dataLayer.push({event:"clique_whatsapp",local:a.className.indexOf("wa")>-1?"flutuante":"pagina"});
+    var c=a.closest?a.closest(".area"):null;window.dataLayer.push({event:"clique_whatsapp",local:a.className.indexOf("wa")>-1?"flutuante":(c?"cartao":"pagina"),tema:c?c.dataset.t:undefined});
   });
 });
 </script>
