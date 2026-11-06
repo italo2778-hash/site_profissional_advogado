@@ -19,6 +19,7 @@ Campos de cada post em posts.json:
   summary      resumo curto para os cartões do blog
   keywords     termos pesquisados (lista)
   quick        "Resposta rápida": 40 a 70 palavras respondendo direto à pergunta
+  image        (opcional) imagem de compartilhamento, caminho a partir da raiz (/blog/.../capa.jpg)
   related      slugs de artigos relacionados ("Leia também")
   body         HTML do texto. Use <h2> para seções e, para FAQ, um
                <h2>Perguntas frequentes</h2> seguido de pares <h3>pergunta</h3><p>resposta</p>.
@@ -161,6 +162,7 @@ def card(p):
 
 def pagina_post(p, todos):
     url = f'{SITE}/blog/{p["slug"]}/'
+    img = SITE + p["image"] if p.get("image") else IMG_OG
     corpo, toc = prepara_corpo(p["body"])
     faq = extrai_faq(p["body"])
     titulo_head = f'{p["seo_title"]} | Italo Bezerra'
@@ -178,7 +180,7 @@ def pagina_post(p, todos):
             "inLanguage": "pt-BR",
             "datePublished": p["date"],
             "dateModified": p["modified"],
-            "image": IMG_OG,
+            "image": img,
             "keywords": ", ".join(p["keywords"]),
             "articleSection": p["tema"],
             "wordCount": len(texto(p["body"]).split()),
@@ -226,7 +228,7 @@ def pagina_post(p, todos):
 <meta property="og:title" content="{e(p["seo_title"])}">
 <meta property="og:description" content="{e(p["description"])}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{IMG_OG}">
+<meta property="og:image" content="{img}">
 <meta property="article:published_time" content="{p["date"]}">
 <meta property="article:modified_time" content="{p["modified"]}">
 <meta property="article:author" content="{AUTOR}">
@@ -234,7 +236,7 @@ def pagina_post(p, todos):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{e(p["seo_title"])}">
 <meta name="twitter:description" content="{e(p["description"])}">
-<meta name="twitter:image" content="{IMG_OG}">
+<meta name="twitter:image" content="{img}">
 {FONTES}
 {GTM_HEAD}
 <link rel="stylesheet" href="/blog/blog.css">
