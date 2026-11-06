@@ -1393,6 +1393,11 @@
       text-align: left;
     }
 
+    .about-copy .cta-note {
+      margin-top: 0;
+      font-size: 11px;
+    }
+
     .btn-cta {
       position: relative;
       display: inline-flex;
@@ -1467,12 +1472,14 @@
     .hr-item {
       grid-area: 1 / 1;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
     }
 
     .hr-item.is-active {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
     }
 
@@ -1860,6 +1867,7 @@
     }
 
     .perfil {
+      min-width: 0;
       display: flex;
       align-items: center;
       gap: 16px;
@@ -1893,11 +1901,9 @@
     }
 
     .perfil-info strong {
-      overflow: hidden;
       color: var(--primary);
       font-size: 15px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      overflow-wrap: anywhere;
     }
 
     .perfil-info span {
@@ -2434,9 +2440,9 @@
 
         <p class="artigos-label">Ou leia no blog</p>
         <div class="artigos">
-            <a class="artigo js-cta" data-local="blog" href="/blog/o-que-e-cet-custo-efetivo-total-financiamento/"><span class="artigo-tag">Financiamento</span><strong>O que é CET e como saber o custo real do seu financiamento</strong><span class="artigo-link">Ler em 3 min <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-            <a class="artigo js-cta" data-local="blog" href="/blog/analise-de-contrato-bancario-e-laudo-tecnico-como-funciona/"><span class="artigo-tag">Contratos</span><strong>Como funciona a revisão e o recálculo da dívida</strong><span class="artigo-link">Ler em 3 min <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-            <a class="artigo js-cta" data-local="blog" href="/blog/negativacao-e-cobranca-indevida-seus-direitos/"><span class="artigo-tag">Cobranças</span><strong>Negativação e cobrança indevida: seus direitos</strong><span class="artigo-link">Ler em 3 min <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+            <a class="artigo js-cta" data-local="blog" href="/blog/o-que-e-cet-custo-efetivo-total-financiamento/"><span class="artigo-tag">Financiamento</span><strong>O que é CET e como saber o custo real do seu financiamento</strong><span class="artigo-link">Ler o artigo <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+            <a class="artigo js-cta" data-local="blog" href="/blog/analise-de-contrato-bancario-e-laudo-tecnico-como-funciona/"><span class="artigo-tag">Contratos</span><strong>Como funciona a revisão e o recálculo da dívida</strong><span class="artigo-link">Ler o artigo <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+            <a class="artigo js-cta" data-local="blog" href="/blog/negativacao-e-cobranca-indevida-seus-direitos/"><span class="artigo-tag">Cobranças</span><strong>Negativação e cobrança indevida: seus direitos</strong><span class="artigo-link">Ler o artigo <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
         </div>
       </div>
     </section>
