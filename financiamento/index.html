@@ -1335,6 +1335,769 @@
       margin-top: 14px;
       color: var(--text-light);
     }
+
+    /* =========================================================
+       REDESENHO 2026-11 · visual law (sobrescreve o que vem antes)
+    ========================================================= */
+
+    :root {
+      --sand: #D8C5B2;
+      --cta-shadow: 0 12px 28px rgba(111, 86, 62, 0.32);
+    }
+
+    .ic {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 auto;
+    }
+
+    .narrow {
+      max-width: 860px;
+    }
+
+    .section-header .section-subtitle {
+      margin-top: 12px;
+    }
+
+    .big-title,
+    .calc-section .section-title {
+      margin-top: 10px;
+      color: var(--primary);
+      font-family: var(--heading-font);
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .blk { background: var(--white); }
+    .blk-soft { background: var(--background); }
+    .blk-dark { background: var(--primary); }
+    .blk-dark .big-title { color: var(--white); }
+    .blk-dark .eyebrow { color: var(--sand); }
+
+    /* ---------- Botão de chamada ---------- */
+
+    .cta-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 44px;
+      text-align: center;
+    }
+
+    .about-copy .cta-block {
+      align-items: flex-start;
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .btn-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 62px;
+      padding: 16px 30px;
+      border-radius: var(--radius);
+      background: var(--secondary);
+      box-shadow: var(--cta-shadow);
+      color: var(--white);
+      font-family: var(--body-font);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-cta:hover {
+      background: var(--dark-brown);
+      box-shadow: 0 16px 34px rgba(111, 86, 62, 0.40);
+      transform: translateY(-2px);
+    }
+
+    .btn-cta .cta-arrow {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-cta:hover .cta-arrow {
+      transform: translateX(4px);
+    }
+
+    .btn-cta.is-light {
+      background: var(--sand);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.30);
+      color: var(--primary);
+    }
+
+    .btn-cta.is-light:hover {
+      background: var(--white);
+    }
+
+    .btn-cta span {
+      transition: opacity 0.35s ease;
+    }
+
+    .cta-note {
+      color: var(--text-light);
+      font-family: var(--mono-font);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .blk-dark .cta-note,
+    .final-cta .cta-note {
+      color: #B5ACA3;
+    }
+
+    /* ---------- Abertura ---------- */
+
+    .hero {
+      min-height: 680px;
+    }
+
+    .hero-rotator {
+      display: grid;
+    }
+
+    .hr-item {
+      grid-area: 1 / 1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+    }
+
+    .hr-item.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hero-title {
+      font-size: 58px;
+    }
+
+    .hero-subtitle {
+      max-width: 560px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 19px;
+      font-weight: 400;
+    }
+
+    .hero-cta {
+      margin-top: 36px;
+    }
+
+    .hero-rotate-btn {
+      min-width: 320px;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-top: 22px;
+      list-style: none;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+    }
+
+    .hero-chips li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-chips .ic {
+      width: 16px;
+      height: 16px;
+      color: var(--sand);
+    }
+
+    .hero-card-title {
+      color: var(--sand);
+      font-family: var(--mono-font);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-list {
+      gap: 0;
+      margin-top: 14px;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .hero-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .hero-list li::before {
+      content: none;
+    }
+
+    .hero-list .ic {
+      width: 38px;
+      height: 38px;
+      padding: 8px;
+      border: 1px solid rgba(216, 197, 178, 0.35);
+      border-radius: 50%;
+      color: var(--sand);
+    }
+
+    /* ---------- Calculadora: botão no mesmo padrão ---------- */
+
+    .calc-wa {
+      min-height: 60px;
+      background: var(--sand);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.30);
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    .calc-wa:hover {
+      background: var(--white);
+    }
+
+    /* ---------- Blocos (o que a revisão faz) ---------- */
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--border);
+      overflow: hidden;
+    }
+
+    .tile {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 30px 28px;
+      background: var(--white);
+    }
+
+    .tile-ic {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 50%;
+      background: var(--soft-brown);
+      color: var(--secondary);
+    }
+
+    .tile strong {
+      color: var(--primary);
+      font-family: var(--heading-font);
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .tile span {
+      color: var(--text-light);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    /* ---------- Teste rápido ---------- */
+
+    .sinais {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .sinal {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 72px;
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--background);
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: left;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .sinal:hover {
+      border-color: var(--secondary);
+    }
+
+    .sinal-box {
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border: 1.5px solid var(--secondary);
+      border-radius: 4px;
+      color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    .sinal-box .ic {
+      width: 16px;
+      height: 16px;
+    }
+
+    .sinal-ic {
+      color: var(--secondary);
+    }
+
+    .sinal[aria-pressed="true"] {
+      border-color: var(--secondary);
+      background: var(--soft-brown);
+    }
+
+    .sinal[aria-pressed="true"] .sinal-box {
+      background: var(--secondary);
+      color: var(--white);
+    }
+
+    .sinais-result {
+      margin-top: 26px;
+      color: var(--text-light);
+      font-family: var(--heading-font);
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .sinais-result.is-on {
+      color: var(--secondary);
+    }
+
+    .sinais-result + .cta-block {
+      margin-top: 18px;
+    }
+
+    /* ---------- Como funciona ---------- */
+
+    .passos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      list-style: none;
+      counter-reset: none;
+    }
+
+    .passo {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(216, 197, 178, 0.35);
+      color: #CFC7BF;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .passo-n {
+      color: var(--sand);
+      font-family: var(--mono-font);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    .passo-n::before {
+      content: "PASSO ";
+    }
+
+    .passo-ic {
+      width: 34px;
+      height: 34px;
+      margin: 6px 0 4px;
+      color: var(--sand);
+    }
+
+    .passo strong {
+      color: var(--white);
+      font-family: var(--heading-font);
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    /* ---------- Perguntas ---------- */
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .faq-question {
+      padding: 20px 56px 20px 22px;
+      font-size: 22px;
+    }
+
+    .faq-answer {
+      padding: 0 22px 20px;
+      color: var(--text-light);
+      font-size: 16px;
+    }
+
+    .faq-answer strong {
+      color: var(--secondary);
+    }
+
+    .faq-answer a {
+      color: var(--secondary);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* ---------- Sobre ---------- */
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-copy h2 {
+      font-size: 44px;
+    }
+
+    .about-quote {
+      position: relative;
+      margin-top: 18px;
+      padding-left: 18px;
+      border-left: 3px solid var(--secondary);
+      color: var(--primary) !important;
+      font-family: var(--heading-font);
+      font-size: 24px !important;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: start;
+      gap: 32px;
+      margin-top: 26px;
+      list-style: none;
+    }
+
+    .stats strong {
+      display: block;
+      color: var(--secondary);
+      font-family: var(--heading-font);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .stats span {
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    .selos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+      list-style: none;
+    }
+
+    .selos li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--background);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .selos .ic {
+      width: 16px;
+      height: 16px;
+      color: var(--secondary);
+    }
+
+    /* ---------- Redes e conteúdo ---------- */
+
+    .social {
+      background: var(--background);
+    }
+
+    .perfis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .perfil {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .perfil:hover {
+      border-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .perfil-foto {
+      width: 56px;
+      height: 56px;
+      flex: 0 0 56px;
+      border: 2px solid var(--sand);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .perfil-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .perfil-info strong {
+      overflow: hidden;
+      color: var(--primary);
+      font-size: 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .perfil-info span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    .perfil-info .ic {
+      width: 15px;
+      height: 15px;
+    }
+
+    .perfil-btn {
+      padding: 9px 18px;
+      border-radius: var(--radius);
+      background: var(--secondary);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .artigos-label {
+      margin: 44px 0 16px;
+      color: var(--secondary);
+      font-family: var(--mono-font);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .artigos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .artigo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 22px;
+      border-top: 3px solid var(--secondary);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: transform 0.2s ease;
+    }
+
+    .artigo:hover {
+      transform: translateY(-2px);
+    }
+
+    .artigo-tag {
+      color: var(--secondary);
+      font-family: var(--mono-font);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .artigo strong {
+      color: var(--primary);
+      font-family: var(--heading-font);
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .artigo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      color: var(--secondary);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .artigo-link .ic {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* ---------- Chamada final ---------- */
+
+    .final-cta h2 {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .final-cta .cta-block {
+      margin-top: 30px;
+    }
+
+    .final-link {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--sand);
+      font-size: 14px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ---------- Responsivo ---------- */
+
+    @media (max-width: 1050px) {
+      .tiles,
+      .artigos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .passos {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .big-title,
+      .calc-section .section-title,
+      .about-copy h2 {
+        font-size: 34px;
+      }
+
+      .hero-title {
+        font-size: 40px;
+      }
+
+      .hero-subtitle {
+        font-size: 17px;
+      }
+
+      .hero-rotate-btn,
+      .btn-cta {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .tiles,
+      .sinais,
+      .perfis,
+      .artigos {
+        grid-template-columns: 1fr;
+      }
+
+      .tiles {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tile {
+        padding: 22px 16px;
+      }
+
+      .tile strong {
+        font-size: 21px;
+      }
+
+      .tile-ic {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
+      }
+
+      .stats {
+        gap: 20px;
+      }
+
+      .stats strong {
+        font-size: 28px;
+      }
+
+      .about-copy .cta-block {
+        align-items: stretch;
+      }
+
+      .faq-question {
+        font-size: 19px;
+      }
+
+      .sinais-result {
+        font-size: 21px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero-title {
+        font-size: 36px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-cta,
+      .btn-cta .cta-arrow,
+      .hr-item {
+        transition: none;
+      }
+    }
+
   </style>
 </head>
 
@@ -1355,59 +2118,47 @@
   <main>
 
     <!-- =========================
-         HERO
+         ABERTURA
     ========================== -->
 
     <section class="hero">
       <div class="container hero-content">
 
         <div class="hero-copy">
-          <div class="eyebrow">
-            Direito Bancário • Defesa do Consumidor
+          <div class="eyebrow">Direito Bancário · Financiamento de veículos</div>
+
+          <div class="hero-rotator">
+            <div class="hr-item is-active"><h1 class="hero-title">Está pagando juros abusivos no seu financiamento?</h1><p class="hero-subtitle">Muita gente paga mais do que deveria e nem desconfia. Em menos de um minuto, você descobre se é o seu caso.</p></div>
+            <div class="hr-item" aria-hidden="true"><p class="hero-title">Reduza o valor das suas parcelas.</p><p class="hero-subtitle">Juros, seguros e tarifas a mais pesam todo mês. Dá para revisar, e você não precisa enfrentar o banco sozinho.</p></div>
+            <div class="hr-item" aria-hidden="true"><p class="hero-title">Saiba como se defender da busca e apreensão.</p><p class="hero-subtitle">Atrasou as parcelas? Ainda há caminhos para proteger o seu carro. O primeiro passo é entender o seu contrato.</p></div>
           </div>
 
-          <h1 class="hero-title">
-            Está pagando juros abusivos no seu financiamento?
-          </h1>
-
-          <p class="hero-subtitle">
-            Compare a taxa do seu contrato com a média do Banco Central
-            e descubra como reduzir suas parcelas e proteger seu patrimônio.
-          </p>
-
           <div class="hero-cta">
-            <a class="btn btn-primary hero-rotate-btn" href="#calculadora" data-labels="Simular meu contrato|Quero revisar meu contrato">
-              <span>Simular meu contrato</span>
+            <a class="btn-cta hero-rotate-btn js-cta" data-local="abertura" href="#calculadora" data-labels="Simular meu contrato grátis|Quero revisar meu contrato">
+              <svg class="ic cta-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Simular meu contrato grátis</span><svg class="ic cta-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </div>
 
-          <p class="hero-note">
-            Análise jurídica individualizada · Atendimento online
-          </p>
+          <ul class="hero-chips">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Simulação gratuita</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sem compromisso</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento online em todo o Brasil</li>
+          </ul>
         </div>
 
         <div class="hero-card">
-          <h2 class="hero-card-title">
-            O que pode ser analisado no seu contrato?
-          </h2>
-
-          <p class="hero-card-intro">
-            A análise pode identificar pontos que merecem avaliação jurídica,
-            considerando as características específicas do financiamento.
-          </p>
-
+          <p class="hero-card-title">O que eu analiso no seu contrato</p>
           <ul class="hero-list">
-            <li>Taxas de juros e custo efetivo da operação</li>
-            <li>Tarifas e encargos cobrados no financiamento</li>
-            <li>Seguros e serviços vinculados ao contrato</li>
-            <li>Cláusulas potencialmente abusivas</li>
-            <li>Condições de pagamento e evolução da dívida</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>Juros acima da média</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Tarifas e encargos</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"/></svg>Seguros embutidos</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M7 7h10M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg>Cláusulas abusivas</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-3.5L5.2 7.5A2 2 0 0 1 7 6.3h10a2 2 0 0 1 1.8 1.2L21 12.5V16"/><path d="M3 12.5h18"/><circle cx="7" cy="16.5" r="1.8"/><circle cx="17" cy="16.5" r="1.8"/></svg>Risco de busca e apreensão</li>
           </ul>
         </div>
 
       </div>
     </section>
-
 
     <!-- =========================
          CALCULADORA
@@ -1525,258 +2276,101 @@
       </div>
     </section>
 
-
     <!-- =========================
-         BENEFÍCIOS
+         O QUE A REVISÃO PODE FAZER
     ========================== -->
 
-    <section class="section benefits">
+    <section class="section blk blk-soft">
       <div class="container">
-
         <div class="section-header">
-          <div class="eyebrow">ANÁLISE CONTRATUAL</div>
-
-          <h2 class="section-title">
-            Com a revisão do seu contrato, você pode:
-          </h2>
+          <div class="eyebrow">REVISÃO DE CONTRATO</div>
+          <h2 class="big-title">O que a revisão pode fazer por você</h2>
         </div>
 
-        <div class="benefits-grid">
-
-          <article class="benefit-card">
-            <div class="benefit-number">01</div>
-            <h3 class="benefit-title">
-              Reduzir parcelas
-            </h3>
-            <p class="benefit-text">
-              Redução significativa do valor das parcelas mensais,
-              aliviando seu orçamento.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">02</div>
-            <h3 class="benefit-title">
-              Questionar cobranças
-            </h3>
-            <p class="benefit-text">
-              Eliminação de juros abusivos e cobranças indevidas que
-              oneram seu contrato, quando identificados.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">03</div>
-            <h3 class="benefit-title">
-              Renegociar condições
-            </h3>
-            <p class="benefit-text">
-              Possibilidade de renegociação dos prazos para pagamentos
-              mais adequados à sua realidade.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">04</div>
-            <h3 class="benefit-title">
-              Recuperar valores
-            </h3>
-            <p class="benefit-text">
-              Recebimento de ressarcimento por valores pagos a mais,
-              quando houver fundamento jurídico para isso.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">05</div>
-            <h3 class="benefit-title">
-              Proteger seu veículo
-            </h3>
-            <p class="benefit-text">
-              Orientação jurídica diante de situações que possam
-              envolver risco de apreensão do veículo.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">06</div>
-            <h3 class="benefit-title">
-              Entender seus direitos
-            </h3>
-            <p class="benefit-text">
-              Orientação clara e transparente sobre seus direitos e
-              deveres como consumidor.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-number">07</div>
-            <h3 class="benefit-title">
-              Ter suporte jurídico
-            </h3>
-            <p class="benefit-text">
-              Suporte jurídico especializado para enfrentar questões
-              bancárias com segurança e respaldo legal.
-            </p>
-          </article>
-
+        <div class="tiles">
+            <div class="tile"><svg class="ic tile-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg><strong>Parcela menor</strong><span>Juros recalculados pela média</span></div>
+            <div class="tile"><svg class="ic tile-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg><strong>Dinheiro de volta</strong><span>O que foi pago a mais</span></div>
+            <div class="tile"><svg class="ic tile-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg><strong>Fim das cobranças extras</strong><span>Tarifas e seguros indevidos</span></div>
+            <div class="tile"><svg class="ic tile-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-3.5L5.2 7.5A2 2 0 0 1 7 6.3h10a2 2 0 0 1 1.8 1.2L21 12.5V16"/><path d="M3 12.5h18"/><circle cx="7" cy="16.5" r="1.8"/><circle cx="17" cy="16.5" r="1.8"/></svg><strong>Seu carro protegido</strong><span>Defesa contra a busca e apreensão</span></div>
+            <div class="tile"><svg class="ic tile-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg><strong>Acordo com respaldo</strong><span>Negociação com base no contrato</span></div>
+            <div class="tile"><svg class="ic tile-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><strong>Tudo explicado</strong><span>Sem juridiquês, pelo WhatsApp</span></div>
         </div>
+
+        <div class="cta-block"><a class="btn-cta  js-cta" data-local="beneficios" href="https://wa.me/5586999765214?text=Ol%C3%A1%21%20Quero%20revisar%20meu%20contrato%20de%20financiamento." target="_blank" rel="noopener noreferrer"><svg class="ic cta-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Quero revisar meu contrato</span><svg class="ic cta-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><p class="cta-note">Resposta pelo WhatsApp · sem compromisso</p></div>
       </div>
     </section>
 
-
     <!-- =========================
-         EDUCATIVO
+         SINAIS DE ALERTA
     ========================== -->
 
-    <section class="section education">
-      <div class="container education-layout">
-
-        <div>
-          <div class="eyebrow">ENTENDA O PROCESSO</div>
-
-          <h2 class="education-title">
-            Por que fazer a revisão do contrato?
-          </h2>
+    <section class="section blk">
+      <div class="container narrow">
+        <div class="section-header">
+          <div class="eyebrow">TESTE RÁPIDO</div>
+          <h2 class="big-title">Seu contrato pode ter problemas se…</h2>
+          <p class="section-subtitle">Toque no que acontece com você.</p>
         </div>
 
-        <div class="education-content">
-
-          <p>
-            <strong>
-              Entenda o processo de revisão de contrato de veículo.
-            </strong>
-          </p>
-
-          <p>
-            Os contratos de financiamento podem conter cláusulas, encargos
-            ou condições que merecem uma avaliação jurídica individualizada.
-          </p>
-
-          <p>
-            A revisão feita por um advogado especializado busca identificar
-            eventuais ilegalidades e verificar se os valores cobrados estão
-            de acordo com o contrato e com a legislação aplicável.
-          </p>
-
-          <p>
-            Durante o processo, são verificadas taxas, juros, tarifas,
-            encargos e prazos, buscando compreender a composição da dívida
-            e as alternativas juridicamente possíveis para o cliente.
-          </p>
-
-          <p>
-            O objetivo é proporcionar segurança e transparência, orientando
-            sobre as alternativas disponíveis para proteger seus interesses
-            e seu patrimônio.
-          </p>
-
+        <div class="sinais" id="sinais">
+          <button type="button" class="sinal" aria-pressed="false" data-sinal="A dívida só cresce, mesmo pagando"><span class="sinal-box"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><svg class="ic sinal-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>A dívida só cresce, mesmo pagando</span></button>
+          <button type="button" class="sinal" aria-pressed="false" data-sinal="Tem seguro que você não pediu"><span class="sinal-box"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><svg class="ic sinal-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 12a11.05 11.05 0 0 0-22 0zm-5 7a3 3 0 0 1-6 0v-7"/></svg><span>Tem seguro que você não pediu</span></button>
+          <button type="button" class="sinal" aria-pressed="false" data-sinal="Pagou tarifa de cadastro, avaliação ou registro"><span class="sinal-box"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><svg class="ic sinal-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Pagou tarifa de cadastro, avaliação ou registro</span></button>
+          <button type="button" class="sinal" aria-pressed="false" data-sinal="A parcela ficou mais cara do que o combinado"><span class="sinal-box"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><svg class="ic sinal-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg><span>A parcela ficou mais cara do que o combinado</span></button>
+          <button type="button" class="sinal" aria-pressed="false" data-sinal="Está atrasado e o banco ameaça buscar o carro"><span class="sinal-box"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><svg class="ic sinal-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>Está atrasado e o banco ameaça buscar o carro</span></button>
+          <button type="button" class="sinal" aria-pressed="false" data-sinal="Refinanciou e a situação piorou"><span class="sinal-box"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><svg class="ic sinal-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg><span>Refinanciou e a situação piorou</span></button>
         </div>
 
+        <p class="sinais-result" id="sinaisResult" aria-live="polite">Marcou pelo menos um? Vale uma conversa.</p>
+
+        <div class="cta-block"><a class="btn-cta  js-cta" data-local="sinais" href="https://wa.me/5586999765214?text=Ol%C3%A1%21%20Fiz%20o%20teste%20r%C3%A1pido%20no%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20contrato%20de%20financiamento." target="_blank" rel="noopener noreferrer"><svg class="ic cta-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Quero conversar sobre meu contrato</span><svg class="ic cta-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><p class="cta-note">Resposta pelo WhatsApp · sem compromisso</p></div>
       </div>
     </section>
 
-
     <!-- =========================
-         FAQ
+         COMO FUNCIONA
     ========================== -->
 
-    <section class="section faq">
+    <section class="section blk blk-dark">
       <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">COMO FUNCIONA</div>
+          <h2 class="big-title">Simples, rápido e sem sair de casa</h2>
+        </div>
 
+        <ol class="passos">
+          <li class="passo"><span class="passo-n">1</span><svg class="ic passo-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><strong>Você manda uma mensagem</strong><span>Pelo WhatsApp, com uma foto do contrato ou da parcela.</span></li>
+          <li class="passo"><span class="passo-n">2</span><svg class="ic passo-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><strong>Eu analiso o contrato</strong><span>Juros, tarifas e seguros, explicados sem juridiquês.</span></li>
+          <li class="passo"><span class="passo-n">3</span><svg class="ic passo-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong>Você decide o próximo passo</strong><span>Com clareza sobre o que pode ser feito no seu caso.</span></li>
+        </ol>
+
+        <div class="cta-block"><a class="btn-cta is-light js-cta" data-local="como_funciona" href="https://wa.me/5586999765214?text=Ol%C3%A1%21%20Quero%20enviar%20meu%20contrato%20de%20financiamento%20para%20an%C3%A1lise." target="_blank" rel="noopener noreferrer"><svg class="ic cta-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Enviar meu contrato agora</span><svg class="ic cta-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><p class="cta-note">Resposta pelo WhatsApp · sem compromisso</p></div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PERGUNTAS
+    ========================== -->
+
+    <section class="section blk blk-soft">
+      <div class="container narrow">
         <div class="section-header">
           <div class="eyebrow">DÚVIDAS FREQUENTES</div>
-
-          <h2 class="section-title">
-            Perguntas frequentes
-          </h2>
-
-          <p class="section-subtitle">
-            Confira algumas das principais dúvidas sobre revisão
-            de financiamento de veículos.
-          </p>
+          <h2 class="big-title">Respostas rápidas</h2>
         </div>
 
         <div class="faq-list">
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              Preciso negociar com o banco?
-            </summary>
-
-            <div class="faq-answer">
-              Não. O ideal é que a negociação seja feita por um advogado
-              especializado, capaz de identificar cláusulas abusivas e
-              buscar a melhor solução para o caso.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              Como saber se os juros são abusivos?
-            </summary>
-
-            <div class="faq-answer">
-              Somente com a análise do contrato. Em muitos casos, os juros
-              e encargos cobrados podem ultrapassar parâmetros considerados
-              razoáveis para a operação, mas a análise depende das
-              características concretas do contrato.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              Posso receber indenização?
-            </summary>
-
-            <div class="faq-answer">
-              Sim, dependendo do caso. Cobranças indevidas, negativação
-              irregular e outros prejuízos podem gerar direito à indenização,
-              conforme as circunstâncias e as provas disponíveis.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              Vale a pena fazer a revisão?
-            </summary>
-
-            <div class="faq-answer">
-              A análise permite verificar se existem cláusulas, encargos
-              ou cobranças que possam ser questionados juridicamente.
-              A viabilidade de uma medida depende das características
-              específicas de cada contrato.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              Posso recuperar valores pagos?
-            </summary>
-
-            <div class="faq-answer">
-              Sim. Se forem identificadas cobranças ilegais, pode ser
-              possível pedir a devolução dos valores pagos indevidamente,
-              conforme o caso concreto.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              Existem outras ilegalidades além dos juros?
-            </summary>
-
-            <div class="faq-answer">
-              Sim. O contrato pode conter tarifas indevidas, seguros não
-              autorizados, encargos excessivos e outras cláusulas que
-              mereçam avaliação jurídica.
-            </div>
-          </details>
-
+          <details class="faq-item"><summary class="faq-question">Preciso ir ao banco negociar?</summary><div class="faq-answer"><strong>Não.</strong> Eu cuido da conversa com o banco e do processo. Você acompanha pelo WhatsApp.</div></details>
+          <details class="faq-item"><summary class="faq-question">Como sei se os juros são abusivos?</summary><div class="faq-answer">Comece pela <a href="#calculadora">calculadora</a>. A confirmação vem com a análise do contrato.</div></details>
+          <details class="faq-item"><summary class="faq-question">Atrasei parcelas. Ainda dá para revisar?</summary><div class="faq-answer"><strong>Sim.</strong> E quanto antes, melhor: há medidas para proteger o veículo.</div></details>
+          <details class="faq-item"><summary class="faq-question">Posso recuperar o que paguei a mais?</summary><div class="faq-answer"><strong>Sim,</strong> quando houver cobrança indevida. Em alguns casos, em dobro.</div></details>
+          <details class="faq-item"><summary class="faq-question">Existem problemas além dos juros?</summary><div class="faq-answer"><strong>Sim.</strong> Seguros embutidos, tarifas e encargos também podem ser revistos.</div></details>
+          <details class="faq-item"><summary class="faq-question">Preciso sair de casa?</summary><div class="faq-answer"><strong>Não.</strong> O atendimento é 100% online, para todo o Brasil.</div></details>
         </div>
+
+        <div class="cta-block"><a class="btn-cta  js-cta" data-local="perguntas" href="https://wa.me/5586999765214?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20meu%20financiamento." target="_blank" rel="noopener noreferrer"><svg class="ic cta-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Tenho outra dúvida</span><svg class="ic cta-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><p class="cta-note">Resposta pelo WhatsApp · sem compromisso</p></div>
       </div>
     </section>
-
 
     <!-- =========================
          SOBRE O ADVOGADO
@@ -1786,134 +2380,81 @@
       <div class="container about-layout">
 
         <div>
-          <img
-            class="about-image"
-            src="./italo-bezerra.jpg"
-            alt="Italo Bezerra, advogado"
-            width="640"
-            height="800"
-            loading="lazy"
-            decoding="async"
-          >
+          <img class="about-image" src="./italo-bezerra.jpg" alt="Italo Bezerra, advogado" width="640" height="800" loading="lazy" decoding="async">
         </div>
 
         <div class="about-copy">
+          <div class="eyebrow">QUEM VAI CUIDAR DO SEU CASO</div>
+          <h2>Italo Bezerra, advogado</h2>
 
-          <div class="eyebrow">
-            SOBRE O ADVOGADO
-          </div>
+          <p class="about-quote">“Meu compromisso é defender você, consumidor, para que pague só o que é justo.”</p>
 
-          <h2>
-            Atuação jurídica focada na proteção do consumidor.
-          </h2>
+          <ul class="stats">
+            <li><strong>3,5 anos</strong><span>de atuação</span></li>
+            <li><strong>Dezenas</strong><span>de clientes pelo Brasil</span></li>
+            <li><strong>100%</strong><span>online</span></li>
+          </ul>
 
-          <p>
-            Possuo 3 anos e meio de experiência jurídica, com
-            pós-graduação em Direito do Consumidor. Ajudei dezenas
-            de clientes pelo Brasil com múltiplos processos focados
-            em ajudar o consumidor contra os abusos dos bancos,
-            pagando somente o justo.
-          </p>
+          <ul class="selos">
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>Pós-graduado em Direito do Consumidor</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 21h14M7 7h10M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg>Foco em Direito Bancário</li>
+            <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>OAB/PI 25.603</li>
+          </ul>
 
-          <p>
-            Meu compromisso é defender <strong>VOCÊ (CONSUMIDOR)</strong>,
-            buscando assegurar o respeito às normas legais e a proteção
-            do patrimônio dos meus clientes.
-          </p>
-
-          <p>
-            Minha atuação é pautada no atendimento humanitário e na
-            disponibilidade para ajudar com seus problemas, sempre com
-            foco na melhor orientação jurídica possível.
-          </p>
-
+          <div class="cta-block"><a class="btn-cta  js-cta" data-local="sobre" href="https://wa.me/5586999765214?text=Ol%C3%A1%2C%20Italo%21%20Gostaria%20de%20conversar%20sobre%20o%20meu%20financiamento." target="_blank" rel="noopener noreferrer"><svg class="ic cta-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Conversar com o Italo</span><svg class="ic cta-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><p class="cta-note">Resposta pelo WhatsApp · sem compromisso</p></div>
         </div>
 
       </div>
     </section>
 
-
     <!-- =========================
-         REDES SOCIAIS
+         REDES E CONTEÚDO
     ========================== -->
 
-    <section class="section social">
+    <section class="section blk social">
       <div class="container">
-
         <div class="section-header">
-          <div class="eyebrow">ACOMPANHE O CONTEÚDO</div>
-
-          <h2 class="section-title">
-            Minhas redes sociais
-          </h2>
-
-          <p class="section-subtitle">
-            Fique por dentro de informações importantes e esclarecimentos
-            que podem ajudar na sua jornada como consumidor.
-          </p>
+          <div class="eyebrow">CONTEÚDO GRATUITO</div>
+          <h2 class="big-title">Dicas rápidas para não cair na conversa do banco</h2>
+          <p class="section-subtitle">Juros, dívidas, golpes e direitos do consumidor, em vídeos curtos e posts diretos.</p>
         </div>
 
-        <div class="social-grid">
-
-          <a
-            class="social-link"
-            href="https://www.instagram.com/italobezerraadvogado/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
+        <div class="perfis">
+          <a class="perfil js-cta" data-local="instagram" href="https://www.instagram.com/italobezerraadvogado/" target="_blank" rel="noopener noreferrer">
+            <img class="perfil-foto" src="./italo-bezerra.jpg" alt="" width="64" height="64" loading="lazy">
+            <span class="perfil-info"><strong>@italobezerraadvogado</strong><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram · posts e reels</span></span>
+            <span class="perfil-btn">Seguir</span>
           </a>
-
-          <a
-            class="social-link"
-            href="https://www.tiktok.com/@italobezerra.advogado"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TikTok
+          <a class="perfil js-cta" data-local="tiktok" href="https://www.tiktok.com/@italobezerra.advogado" target="_blank" rel="noopener noreferrer">
+            <img class="perfil-foto" src="./italo-bezerra.jpg" alt="" width="64" height="64" loading="lazy">
+            <span class="perfil-info"><strong>@italobezerra.advogado</strong><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><polygon points="10 8 16 12 10 16 10 8"/></svg>TikTok · vídeos curtos</span></span>
+            <span class="perfil-btn">Seguir</span>
           </a>
-
         </div>
 
+        <p class="artigos-label">Ou leia no blog</p>
+        <div class="artigos">
+            <a class="artigo js-cta" data-local="blog" href="/blog/o-que-e-cet-custo-efetivo-total-financiamento/"><span class="artigo-tag">Financiamento</span><strong>O que é CET e como saber o custo real do seu financiamento</strong><span class="artigo-link">Ler em 3 min <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+            <a class="artigo js-cta" data-local="blog" href="/blog/analise-de-contrato-bancario-e-laudo-tecnico-como-funciona/"><span class="artigo-tag">Contratos</span><strong>Como funciona a revisão e o recálculo da dívida</strong><span class="artigo-link">Ler em 3 min <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+            <a class="artigo js-cta" data-local="blog" href="/blog/negativacao-e-cobranca-indevida-seus-direitos/"><span class="artigo-tag">Cobranças</span><strong>Negativação e cobrança indevida: seus direitos</strong><span class="artigo-link">Ler em 3 min <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        </div>
       </div>
     </section>
 
-
     <!-- =========================
-         CTA FINAL
+         CHAMADA FINAL
     ========================== -->
 
     <section class="final-cta">
-
       <div class="container">
-
-        <h2>
-          Não perca mais dinheiro com seu financiamento.
-          Saiba como reduzir suas parcelas agora mesmo.
-        </h2>
-
-        <p>
-          Faça uma análise inicial do seu caso e entenda quais
-          pontos do seu financiamento podem ser avaliados.
-        </p>
-
-        <a
-          class="btn btn-light"
-          href="#calculadora"
-        >
-          Quero reduzir meu financiamento
-        </a>
-
+        <h2>Não deixe o banco decidir quanto você paga.</h2>
+        <p>Mande uma mensagem. A primeira conversa é sem compromisso.</p>
+        <div class="cta-block"><a class="btn-cta is-light js-cta" data-local="final" href="https://wa.me/5586999765214?text=Ol%C3%A1%21%20Quero%20falar%20com%20o%20advogado%20sobre%20o%20meu%20financiamento." target="_blank" rel="noopener noreferrer"><svg class="ic cta-ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>Falar com o advogado agora</span><svg class="ic cta-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        <a class="final-link" href="#calculadora">ou simule seu contrato primeiro</a>
       </div>
-
     </section>
 
   </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
 
   <footer>
 
@@ -1936,7 +2477,6 @@
 
   </footer>
 
-
   <!-- =========================
        WHATSAPP FLUTUANTE
   ========================== -->
@@ -1952,16 +2492,31 @@
     <span class="wf-label">Falar com um advogado</span>
   </a>
 
-
   <script>
-    // Ano automático do rodapé
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-
-    // Botões que alternam o texto (abertura e título da calculadora)
     (function () {
       var calmo = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function registra(local, extra) {
+        window.dataLayer = window.dataLayer || [];
+        var o = { event: "clique_whatsapp", local: local };
+        for (var k in extra) o[k] = extra[k];
+        window.dataLayer.push(o);
+      }
+
+      // Títulos da abertura alternando
+      var itens = document.querySelectorAll(".hr-item"), atual = 0;
+      if (!calmo && itens.length > 1) {
+        setInterval(function () {
+          itens[atual].classList.remove("is-active");
+          itens[atual].setAttribute("aria-hidden", "true");
+          atual = (atual + 1) % itens.length;
+          itens[atual].classList.add("is-active");
+          itens[atual].removeAttribute("aria-hidden");
+        }, 6500);
+      }
+
+      // Textos que alternam (botão da abertura e título da calculadora)
       function alterna(el, alvo, ms) {
         var labels = el.getAttribute("data-labels").split("|"), k = 0;
         if (calmo || labels.length < 2) return;
@@ -1975,13 +2530,43 @@
       if (b) alterna(b, b.querySelector("span"), 10000);
       var t = document.querySelector(".calc-rotate");
       if (t) alterna(t, t, 4500);
-    })();
 
-    // Clique no botão flutuante (GTM)
-    document.querySelector(".whatsapp-float").addEventListener("click", function () {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "clique_whatsapp", local: "flutuante" });
-    });
+      // Teste rápido: sinais de alerta
+      var sinais = document.querySelectorAll(".sinal"), res = document.getElementById("sinaisResult");
+      var ctaSinais = document.querySelector('.js-cta[data-local="sinais"]');
+      var base = "Olá! Fiz o teste rápido no site e gostaria de conversar sobre o meu contrato de financiamento.";
+      function atualiza() {
+        var marcados = [].filter.call(sinais, function (s) { return s.getAttribute("aria-pressed") === "true"; })
+          .map(function (s) { return s.getAttribute("data-sinal"); });
+        var n = marcados.length;
+        res.textContent = n === 0 ? "Marcou pelo menos um? Vale uma conversa." :
+          n === 1 ? "1 sinal de alerta. Vale conferir o seu contrato." :
+          n + " sinais de alerta. Seu contrato merece uma análise.";
+        res.classList.toggle("is-on", n > 0);
+        var msg = base + (n ? "\n\nO que acontece comigo:\n- " + marcados.join("\n- ") : "");
+        ctaSinais.href = "https://wa.me/5586999765214?text=" + encodeURIComponent(msg);
+        ctaSinais.setAttribute("data-sinais", n);
+      }
+      sinais.forEach(function (s) {
+        s.addEventListener("click", function () {
+          s.setAttribute("aria-pressed", s.getAttribute("aria-pressed") === "true" ? "false" : "true");
+          atualiza();
+        });
+      });
+
+      // Cliques nos botões (GTM)
+      document.querySelectorAll(".js-cta").forEach(function (a) {
+        a.addEventListener("click", function () {
+          var href = a.getAttribute("href") || "";
+          var evento = href.indexOf("wa.me") > -1 ? "clique_whatsapp" : "clique_cta";
+          window.dataLayer = window.dataLayer || [];
+          var o = { event: evento, local: a.getAttribute("data-local") };
+          if (a.hasAttribute("data-sinais")) o.sinais = a.getAttribute("data-sinais");
+          window.dataLayer.push(o);
+        });
+      });
+      document.querySelector(".whatsapp-float").addEventListener("click", function () { registra("flutuante", {}); });
+    })();
   </script>
 
   <!-- =========================
