@@ -232,14 +232,7 @@
       position: absolute;
       inset: 0;
       z-index: -3;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(45, 45, 45, 0.96) 0%,
-          rgba(45, 45, 45, 0.88) 38%,
-          rgba(45, 45, 45, 0.60) 72%,
-          rgba(45, 45, 45, 0.48) 100%
-        );
+      background: rgba(38, 34, 31, 0.80);
     }
 
     .hero::after {
@@ -248,7 +241,8 @@
       inset: 0;
       z-index: -2;
       background: url("./contract-banner.jpg") center / cover no-repeat;
-      transform: scale(1.01);
+      filter: blur(7px) saturate(0.85);
+      transform: scale(1.08);
     }
 
     .hero-content {
@@ -316,15 +310,12 @@
     }
 
     .hero-card {
-      padding: 34px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.95);
-      box-shadow: var(--shadow);
+      padding: 6px 0 6px 40px;
+      border-left: 1px solid rgba(216, 197, 178, 0.35);
     }
 
     .hero-card-title {
-      color: var(--primary);
+      color: var(--white);
       font-family: var(--heading-font);
       font-size: 28px;
       font-weight: 700;
@@ -333,7 +324,7 @@
 
     .hero-card-intro {
       margin-top: 12px;
-      color: var(--text-light);
+      color: rgba(255, 255, 255, 0.72);
       font-size: 15px;
     }
 
@@ -347,8 +338,8 @@
     .hero-list li {
       position: relative;
       padding-left: 28px;
-      color: var(--text);
-      font-size: 14px;
+      color: rgba(255, 255, 255, 0.90);
+      font-size: 15px;
       line-height: 1.5;
     }
 
@@ -357,8 +348,16 @@
       position: absolute;
       left: 0;
       top: 0;
-      color: var(--secondary);
+      color: #D8C5B2;
       font-weight: 700;
+    }
+
+    .hero-rotate-btn {
+      min-width: 260px;
+    }
+
+    .hero-rotate-btn span {
+      transition: opacity 0.35s ease;
     }
 
     /* =========================
@@ -629,13 +628,15 @@
 
     .about-layout {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 70px;
+      grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+      gap: 64px;
       align-items: center;
+      justify-content: center;
     }
 
     .about-image {
       width: 100%;
+      max-width: 340px;
       aspect-ratio: 4 / 5;
       object-fit: cover;
       object-position: center;
@@ -754,20 +755,43 @@
       z-index: 50;
       display: flex;
       align-items: center;
-      justify-content: center;
-      width: 58px;
       height: 58px;
-      border-radius: 50%;
+      min-width: 58px;
+      padding: 0 16px;
+      border-radius: 29px;
       background: #25D366;
       color: var(--white);
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-      font-size: 25px;
+      font-size: 15px;
       font-weight: 700;
-      transition: transform 0.2s ease;
+      transition: background-color 0.2s ease;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.05);
+    .whatsapp-float svg {
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+    }
+
+    .whatsapp-float .wf-label {
+      max-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0;
+      transition: max-width 0.3s ease, opacity 0.2s ease, margin 0.3s ease;
+    }
+
+    .whatsapp-float:hover,
+    .whatsapp-float:focus-visible {
+      background: #1EBE5A;
+    }
+
+    .whatsapp-float:hover .wf-label,
+    .whatsapp-float:focus-visible .wf-label {
+      max-width: 220px;
+      margin-left: 10px;
+      opacity: 1;
     }
 
     .sr-only {
@@ -794,6 +818,9 @@
 
       .hero-card {
         max-width: 650px;
+        padding: 30px 0 0;
+        border-left: 0;
+        border-top: 1px solid rgba(216, 197, 178, 0.35);
       }
 
       .benefits-grid {
@@ -812,7 +839,7 @@
       }
 
       .about-image {
-        max-width: 500px;
+        max-width: 300px;
       }
     }
 
@@ -842,7 +869,7 @@
       }
 
       .hero-card {
-        padding: 27px;
+        padding: 26px 0 0;
       }
 
       .benefits-grid {
@@ -1238,21 +1265,40 @@
     }
 
     .calc-method {
-      max-width: 860px;
-      margin: 36px auto 0;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
       color: var(--text-light);
-      font-size: 14px;
-      line-height: 1.65;
+      font-size: 12.5px;
+      line-height: 1.6;
     }
 
-    .calc-method summary {
+    .calc-method strong {
       color: var(--secondary);
-      font-weight: 700;
-      cursor: pointer;
     }
 
-    .calc-method p {
-      margin-top: 10px;
+    .calc-title {
+      min-height: 2.3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calc-rotate {
+      transition: opacity 0.35s ease;
+    }
+
+    .calc-direct {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #B5ACA3;
+      font-size: 14px;
+    }
+
+    .calc-direct .btn {
+      width: 100%;
+      margin-top: 12px;
     }
 
     @media (max-width: 1050px) {
@@ -1321,19 +1367,16 @@
 
           <h1 class="hero-title">
             Está pagando juros abusivos no seu financiamento?
-            Saiba como reduzir suas parcelas e proteger seu patrimônio.
           </h1>
 
           <p class="hero-subtitle">
-            Descubra como reduzir suas parcelas e proteger seu patrimônio.
+            Compare a taxa do seu contrato com a média do Banco Central
+            e descubra como reduzir suas parcelas e proteger seu patrimônio.
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#calculadora">
-              Simular meu contrato
-            </a>
-            <a class="btn btn-outline-light" href="#formulario">
-              Quero Revisar Meu Contrato
+            <a class="btn btn-primary hero-rotate-btn" href="#calculadora" data-labels="Simular meu contrato|Quero revisar meu contrato">
+              <span>Simular meu contrato</span>
             </a>
           </div>
 
@@ -1375,16 +1418,14 @@
         <div class="section-header">
           <div class="eyebrow">SIMULAÇÃO GRATUITA</div>
 
-          <h2 class="section-title">
-            Compare os juros do seu financiamento com a média do Banco Central
+          <h2 class="section-title calc-title">
+            <span class="calc-rotate" data-labels="Descubra se o seu financiamento é abusivo|Descubra quanto você tem a receber|Descubra quanto você pode reduzir no seu contrato">Descubra se o seu financiamento é abusivo</span>
           </h2>
 
           <p class="calc-lead-intro">
             Informe os dados do contrato e veja na hora se a taxa supera o critério
-            usado pelo tribunal do seu estado. O resultado é uma estimativa.
+            usado pelo tribunal do seu estado. É gratuito e leva menos de um minuto.
           </p>
-
-          <span class="calc-status" id="calcStatus">Carregando a média do Banco Central…</span>
         </div>
 
         <div class="calc-layout">
@@ -1445,8 +1486,17 @@
               </div>
 
               <div class="calc-field full">
+                <label for="cSituacao">Situação do contrato</label>
+                <select id="cSituacao">
+                  <option value="Em dia">Em dia</option>
+                  <option value="Atrasado">Atrasado</option>
+                  <option value="Negativado">Negativado</option>
+                </select>
+              </div>
+
+              <div class="calc-field full">
                 <div class="calc-checks">
-                  <label><input type="checkbox" id="cAtraso"> Contrato em atraso</label>
+                  <label><input type="checkbox" id="cNegociou"> Já tentei negociar com o banco</label>
                   <label><input type="checkbox" id="cRefin"> Contrato refinanciado</label>
                 </div>
               </div>
@@ -1456,33 +1506,20 @@
 
           <div class="calc-result" id="calcResult" aria-live="polite">
             <div class="calc-empty">
-              <strong>Preencha os dados ao lado</strong>
+              <strong>Preencha os dados do contrato</strong>
               O resultado aparece aqui e é recalculado a cada alteração.
             </div>
           </div>
 
         </div>
 
-        <details class="calc-method">
-          <summary>Como o cálculo é feito</summary>
-          <p>
-            Usamos a série 20749 do Banco Central, com a taxa média das novas operações
-            de financiamento de veículos para pessoa física, no mês da contratação. A taxa
-            anual divulgada é convertida em taxa mensal.
-          </p>
-          <p>
-            As parcelas são recalculadas pela Tabela Price, na taxa do contrato e na taxa média,
-            sobre o mesmo valor financiado (somados os seguros e tarifas informados). A diferença
-            entre as duas parcelas é o excesso mensal. Multiplicado pelas parcelas pagas, indica
-            o valor pago acima da média; nas parcelas restantes, a economia potencial.
-          </p>
-          <p>
-            Há indício de abusividade quando a taxa contratada supera a média multiplicada pelo
-            critério do tribunal (1,5 vez na maioria dos estados). Os valores são estimativas e
-            podem variar conforme encargos, mora, seguros e o entendimento de cada juízo. A simulação
-            não substitui a análise do contrato.
-          </p>
-        </details>
+        <p class="calc-method">
+          <strong>Como calculamos:</strong> comparamos a taxa do contrato com a média oficial do Banco Central
+          para financiamento de veículos no mês da contratação, recalculando as parcelas pela Tabela Price sobre
+          o mesmo valor (com os seguros e tarifas informados). Há indício de abusividade quando a taxa supera a
+          média multiplicada pelo critério do tribunal, 1,5 vez na maioria dos estados. Os valores são estimativas
+          e não substituem a análise do contrato.
+        </p>
 
       </div>
     </section>
@@ -1583,104 +1620,6 @@
           </article>
 
         </div>
-      </div>
-    </section>
-
-
-    <!-- =========================
-         FORMULÁRIO
-    ========================== -->
-
-    <section class="section form-section" id="formulario">
-      <div class="container form-layout">
-
-        <div class="form-intro">
-          <div class="eyebrow">COMECE AQUI</div>
-
-          <h2>
-            Descubra o que pode ser analisado no seu financiamento.
-          </h2>
-
-          <p>
-            Preencha algumas informações básicas sobre o contrato.
-            A partir desses dados, poderemos entender melhor a situação
-            e orientar os próximos passos.
-          </p>
-
-          <ul class="form-points">
-            <li>Atendimento individualizado</li>
-            <li>Análise direcionada ao seu contrato</li>
-            <li>Orientação jurídica objetiva</li>
-            <li>Atendimento realizado de forma online</li>
-          </ul>
-        </div>
-
-        <div class="form-box">
-
-          <h3>Comece aqui!</h3>
-
-          <p class="form-box-intro">
-            Informe os dados abaixo para iniciar o atendimento.
-          </p>
-
-          <form id="financiamentoForm">
-
-            <div class="form-group">
-              <label for="valor">
-                Valor aproximado do seu financiamento (R$)
-              </label>
-
-              <input
-                type="number"
-                id="valor"
-                name="valor"
-                inputmode="decimal"
-                min="0"
-                step="0.01"
-                placeholder="Ex.: 50.000"
-                required
-              >
-            </div>
-
-            <div class="form-group">
-              <label for="estado">
-                Estado do contrato
-              </label>
-
-              <select id="estado" name="estado" required>
-                <option value="">Selecione</option>
-                <option value="Em dia">Em dia</option>
-                <option value="Atrasado">Atrasado</option>
-                <option value="Negativado">Negativado</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="negociou">
-                Você já tentou negociar com o banco?
-              </label>
-
-              <select id="negociou" name="negociou" required>
-                <option value="">Selecione</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-              </select>
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-primary form-submit"
-            >
-              Quero Revisar Meu Contrato
-            </button>
-
-            <p class="form-disclaimer">
-              Seus dados serão utilizados para o atendimento jurídico.
-            </p>
-
-          </form>
-        </div>
-
       </div>
     </section>
 
@@ -1848,10 +1787,10 @@
         <div>
           <img
             class="about-image"
-            src="./lawyer-hero.jpg"
+            src="./italo-bezerra.jpg"
             alt="Italo Bezerra, advogado"
-            width="800"
-            height="1000"
+            width="640"
+            height="800"
             loading="lazy"
             decoding="async"
           >
@@ -1959,7 +1898,7 @@
 
         <a
           class="btn btn-light"
-          href="#formulario"
+          href="#calculadora"
         >
           Quero reduzir meu financiamento
         </a>
@@ -2006,9 +1945,10 @@
     href="https://wa.me/5586999765214"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Falar com Italo Bezerra pelo WhatsApp"
+    aria-label="Falar com um advogado pelo WhatsApp"
   >
-    <span aria-hidden="true">◉</span>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.54 1.74 6.52L3 29l6.65-1.74A12.94 12.94 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3Zm0 23.8c-2.02 0-4-.54-5.72-1.57l-.41-.24-3.95 1.03 1.05-3.84-.27-.4A10.73 10.73 0 0 1 5.27 16c0-5.94 4.83-10.77 10.77-10.77 5.93 0 10.75 4.83 10.75 10.77 0 5.94-4.82 10.8-10.75 10.8Zm5.9-8.06c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.5.14-.65.15-.14.32-.38.48-.56.16-.19.21-.32.32-.54.1-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.69 0 1.58 1.16 3.12 1.32 3.33.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
+    <span class="wf-label">Falar com um advogado</span>
   </a>
 
 
@@ -2018,45 +1958,29 @@
       new Date().getFullYear();
 
 
-    // Formulário → WhatsApp
-    document
-      .getElementById("financiamentoForm")
-      .addEventListener("submit", function (event) {
+    // Botões que alternam o texto (abertura e título da calculadora)
+    (function () {
+      var calmo = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function alterna(el, alvo, ms) {
+        var labels = el.getAttribute("data-labels").split("|"), k = 0;
+        if (calmo || labels.length < 2) return;
+        setInterval(function () {
+          k = (k + 1) % labels.length;
+          alvo.style.opacity = 0;
+          setTimeout(function () { alvo.textContent = labels[k]; alvo.style.opacity = 1; }, 350);
+        }, ms);
+      }
+      var b = document.querySelector(".hero-rotate-btn");
+      if (b) alterna(b, b.querySelector("span"), 10000);
+      var t = document.querySelector(".calc-rotate");
+      if (t) alterna(t, t, 4500);
+    })();
 
-        event.preventDefault();
-
-        const valor = document
-          .getElementById("valor")
-          .value;
-
-        const estado = document
-          .getElementById("estado")
-          .value;
-
-        const negociou = document
-          .getElementById("negociou")
-          .value;
-
-        const mensagem =
-          "Olá! Gostaria de uma análise do meu financiamento.%0A%0A" +
-          "Valor aproximado do financiamento: R$ " +
-          encodeURIComponent(valor) +
-          "%0A" +
-          "Estado do contrato: " +
-          encodeURIComponent(estado) +
-          "%0A" +
-          "Já tentei negociar com o banco: " +
-          encodeURIComponent(negociou);
-
-        const whatsappUrl =
-          "https://wa.me/5586999765214?text=" + mensagem;
-
-        window.open(
-          whatsappUrl,
-          "_blank",
-          "noopener,noreferrer"
-        );
-      });
+    // Clique no botão flutuante (GTM)
+    document.querySelector(".whatsapp-float").addEventListener("click", function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "clique_whatsapp", local: "flutuante" });
+    });
   </script>
 
   <!-- =========================
@@ -2089,7 +2013,7 @@
     });
 
     var $ = function (id) { return document.getElementById(id); };
-    var form = $("calcForm"), out = $("calcResult"), status = $("calcStatus");
+    var form = $("calcForm"), out = $("calcResult");
     var modo = "taxa", jaRegistrou = false;
 
     // ---------- Campos ----------
@@ -2124,6 +2048,7 @@
     form.addEventListener("input", calcula);
     form.addEventListener("change", calcula);
     form.addEventListener("submit", function (e) { e.preventDefault(); });
+    vazio("O resultado aparece aqui e é recalculado a cada alteração.");
 
     // ---------- Utilitários ----------
     function num(v) {
@@ -2192,8 +2117,12 @@
     }
 
     // ---------- Cálculo ----------
+    var MSG_DIRETA = "Olá! Gostaria de revisar o meu contrato de financiamento.";
     function vazio(msg) {
-      out.innerHTML = '<div class="calc-empty"><strong>Preencha os dados ao lado</strong>' + msg + "</div>";
+      out.innerHTML = '<div class="calc-empty"><strong>Preencha os dados do contrato</strong>' + msg +
+        '<div class="calc-direct">Prefere falar direto com o advogado?' +
+        '<a class="btn btn-light calc-wa" data-resultado="direto" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + NUM +
+        "?text=" + encodeURIComponent(MSG_DIRETA) + '">Quero revisar meu contrato</a></div></div>';
     }
 
     function calcula() {
@@ -2202,7 +2131,7 @@
       var valor = num($("cValor").value), prazo = Math.round(num($("cPrazo").value));
       var pagas = Math.round(num($("cPagas").value));
       var seguros = num($("cSeguros").value); if (!(seguros > 0)) seguros = 0;
-      var atraso = $("cAtraso").checked, refin = $("cRefin").checked;
+      var situacao = $("cSituacao").value, atraso = situacao !== "Em dia", refin = $("cRefin").checked, negociou = $("cNegociou").checked;
 
       if (!mes || !ano) return vazio("Informe o mês e o ano em que o contrato foi assinado.");
       if (!(valor > 0)) return vazio("Informe o valor financiado.");
@@ -2248,7 +2177,7 @@
         "<div><span>Média BACEN " + rotulo(m.chave) + "</span><b>" + pct(im) + "</b></div>" +
         "<div><span>Limite " + t[1] + "</span><b>" + (mult ? pct(limite) : "—") + "</b></div></div>";
 
-      if (atraso) h += '<div class="calc-flag">Contrato em atraso: há medidas para proteger o veículo e negociar, e o caso merece análise independentemente da taxa.</div>';
+      if (atraso) h += '<div class="calc-flag">Contrato ' + situacao.toLowerCase() + ': há medidas para proteger o veículo e negociar, e o caso merece análise independentemente da taxa.</div>';
       if (refin) h += '<div class="calc-flag">Contrato refinanciado: o contrato anterior também pode ter cobranças a revisar.</div>';
 
       h += '<div class="calc-numbers">';
@@ -2281,9 +2210,9 @@
         "\nTaxa do contrato: " + pct(ic) + " a.m." + (modo === "parcela" ? " (calculada pela parcela)" : "") +
         " · Média BACEN: " + pct(im) + " a.m." +
         "\nResultado: " + (mult === 0 ? "análise individual" : abusivo ? "indício de abusividade (" + vezes(razao) + " a média)" : "taxa dentro do critério") +
-        (atraso ? "\nContrato em atraso." : "") + (refin ? "\nContrato refinanciado." : "") +
+        "\nSituação do contrato: " + situacao + (negociou ? "\nJá tentei negociar com o banco." : "") + (refin ? "\nContrato refinanciado." : "") +
         "\n\nGostaria de uma análise do meu contrato.";
-      var rotuloBotao = abusivo ? "Quero analisar meu contrato" : atraso ? "Falar sobre meu contrato em atraso" : "Quero uma análise completa do contrato";
+      var rotuloBotao = "Quero revisar meu contrato";
 
       h += '<a class="btn btn-light calc-wa" data-resultado="' + resultado + '" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + NUM + "?text=" + encodeURIComponent(msg) + '">' + rotuloBotao + "</a>";
       h += '<p class="calc-disclaimer">Simulação estimativa, baseada na média oficial do Banco Central e na Tabela Price' +
@@ -2304,13 +2233,6 @@
     });
 
     // ---------- Média ao vivo do BACEN ----------
-    function marca(ao_vivo) {
-      var ks = chaves();
-      status.textContent = (ao_vivo ? "BACEN ao vivo" : "Média do BACEN") + " · série 20749 · até " + rotulo(ks[ks.length - 1]);
-      status.classList.toggle("is-live", ao_vivo);
-    }
-    marca(false);
-
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
     fetch("https://api.bcb.gov.br/dados/serie/bcdata.sgs.20749/dados?formato=json&dataInicial=01/01/2012", ctrl ? { signal: ctrl.signal } : {})
@@ -2322,7 +2244,6 @@
           var v = parseFloat(String(x.valor).replace(",", "."));
           if (!isNaN(v)) serie[x.data.slice(6) + "-" + x.data.slice(3, 5)] = v;
         });
-        marca(true);
         calcula();
       })
       .catch(function () { clearTimeout(timer); });
