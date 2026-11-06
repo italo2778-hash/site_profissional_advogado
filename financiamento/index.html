@@ -2252,13 +2252,14 @@
       if (refin) h += '<div class="calc-flag">Contrato refinanciado: o contrato anterior também pode ter cobranças a revisar.</div>';
 
       h += '<div class="calc-numbers">';
-      if (excesso > 0.005) {
+      if ((abusivo || mult === 0) && excesso > 0.005) {
         if (pagas > 0) h += '<div class="calc-number is-main"><span>Pago acima da média em ' + pagas + " parcela" + (pagas === 1 ? "" : "s") + "</span><b>" + brl(pagoAMais) + "</b></div>";
         h += '<div class="calc-number"><span>Diferença por parcela</span><b>' + brl(excesso) + "</b></div>";
         if (prazo > pagas) h += '<div class="calc-number"><span>Nas ' + (prazo - pagas) + " parcelas restantes</span><b>" + brl(economia) + "</b></div>";
       } else {
         h += '<div class="calc-number"><span>Parcela pela taxa do contrato</span><b>' + brl(pC) + "</b></div>";
         h += '<div class="calc-number"><span>Total de juros no contrato</span><b>' + brl(pC * prazo - P) + "</b></div>";
+        if (excesso > 0.005) h += '<div class="calc-number"><span>Diferença para a parcela pela média</span><b>' + brl(excesso) + "</b></div>";
       }
       h += "</div>";
 
