@@ -290,7 +290,21 @@
     }
 
     .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 34px;
+    }
+
+    .btn-outline-light {
+      border-color: rgba(255, 255, 255, 0.55);
+      background: transparent;
+      color: var(--white);
+    }
+
+    .btn-outline-light:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .hero-note {
@@ -892,6 +906,388 @@
         transition: none !important;
       }
     }
+
+    /* =========================
+       CALCULADORA DE ABUSIVIDADE
+    ========================= */
+
+    .calc-section {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .calc-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-light);
+      font-family: var(--mono-font);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .calc-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #B9A58F;
+    }
+
+    .calc-status.is-live::before {
+      background: #3F7D5A;
+    }
+
+    .calc-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .calc-form {
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--background);
+    }
+
+    .calc-mode {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 26px;
+      border: 1px solid var(--secondary);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .calc-mode button {
+      min-height: 46px;
+      padding: 8px 10px;
+      border: 0;
+      background: transparent;
+      color: var(--secondary);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .calc-mode button[aria-pressed="true"] {
+      background: var(--secondary);
+      color: var(--white);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 18px;
+    }
+
+    .calc-field {
+      margin-bottom: 18px;
+    }
+
+    .calc-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .calc-field label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .calc-field label small {
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .calc-field input:focus,
+    .calc-field select:focus {
+      outline: 2px solid var(--secondary);
+      outline-offset: 1px;
+    }
+
+    .calc-pair {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 8px;
+    }
+
+    .calc-hint {
+      margin-top: 6px;
+      color: var(--text-light);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .calc-checks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 4px;
+    }
+
+    .calc-checks label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .calc-checks input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--secondary);
+    }
+
+    .calc-result {
+      position: sticky;
+      top: 24px;
+      padding: 32px;
+      border-radius: var(--radius);
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .calc-empty {
+      color: #CFC7BF;
+      font-size: 15px;
+    }
+
+    .calc-empty strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--white);
+      font-family: var(--heading-font);
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    .calc-verdict-label {
+      color: #CDB89F;
+      font-family: var(--mono-font);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .calc-verdict {
+      margin: 6px 0 10px;
+      font-family: var(--heading-font);
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .calc-verdict.is-alert {
+      color: #F2C9A8;
+    }
+
+    .calc-lead {
+      color: #DDD6CF;
+      font-size: 15px;
+    }
+
+    .calc-compare {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin: 22px 0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.14);
+      overflow: hidden;
+    }
+
+    .calc-compare div {
+      padding: 12px 10px;
+      background: var(--primary);
+    }
+
+    .calc-compare span {
+      display: block;
+      color: #B5ACA3;
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    .calc-compare b {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--mono-font);
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .calc-numbers {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .calc-number {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .calc-number span {
+      color: #CFC7BF;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .calc-number b {
+      font-family: var(--mono-font);
+      font-size: 18px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .calc-number.is-main b {
+      color: #F2C9A8;
+      font-size: 24px;
+    }
+
+    .calc-note {
+      margin-bottom: 20px;
+      color: #B5ACA3;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .calc-flag {
+      margin-bottom: 18px;
+      padding: 12px 14px;
+      border-left: 3px solid #F2C9A8;
+      background: rgba(255, 255, 255, 0.06);
+      color: #EDE6DF;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .calc-chart {
+      margin: 4px 0 20px;
+    }
+
+    .calc-chart svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .calc-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin-top: 6px;
+      color: #B5ACA3;
+      font-size: 12px;
+    }
+
+    .calc-legend i {
+      display: inline-block;
+      width: 18px;
+      height: 0;
+      margin-right: 6px;
+      vertical-align: middle;
+      border-top: 2px solid #CDB89F;
+    }
+
+    .calc-legend i.dash {
+      border-top: 2px dashed #F2C9A8;
+    }
+
+    .calc-legend i.dot {
+      border-top: 2px dotted #8C847C;
+    }
+
+    .calc-wa {
+      width: 100%;
+    }
+
+    .calc-disclaimer {
+      margin-top: 14px;
+      color: #8C847C;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .calc-method {
+      max-width: 860px;
+      margin: 36px auto 0;
+      color: var(--text-light);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .calc-method summary {
+      color: var(--secondary);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .calc-method p {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 1050px) {
+      .calc-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-result {
+        position: static;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .calc-form,
+      .calc-result {
+        padding: 22px 18px;
+      }
+
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-verdict {
+        font-size: 28px;
+      }
+
+      .calc-compare b {
+        font-size: 15px;
+      }
+    }
+
+    .calc-lead-intro {
+      margin-top: 14px;
+      color: var(--text-light);
+    }
   </style>
 </head>
 
@@ -933,7 +1329,10 @@
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#formulario">
+            <a class="btn btn-primary" href="#calculadora">
+              Simular meu contrato
+            </a>
+            <a class="btn btn-outline-light" href="#formulario">
               Quero Revisar Meu Contrato
             </a>
           </div>
@@ -961,6 +1360,129 @@
             <li>Condições de pagamento e evolução da dívida</li>
           </ul>
         </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         CALCULADORA
+    ========================== -->
+
+    <section class="section calc-section" id="calculadora">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="eyebrow">SIMULAÇÃO GRATUITA</div>
+
+          <h2 class="section-title">
+            Compare os juros do seu financiamento com a média do Banco Central
+          </h2>
+
+          <p class="calc-lead-intro">
+            Informe os dados do contrato e veja na hora se a taxa supera o critério
+            usado pelo tribunal do seu estado. O resultado é uma estimativa.
+          </p>
+
+          <span class="calc-status" id="calcStatus">Carregando a média do Banco Central…</span>
+        </div>
+
+        <div class="calc-layout">
+
+          <form class="calc-form" id="calcForm" novalidate>
+
+            <div class="calc-mode" role="group" aria-label="Como você quer informar o contrato">
+              <button type="button" data-mode="taxa" aria-pressed="true">Sei a taxa de juros</button>
+              <button type="button" data-mode="parcela" aria-pressed="false">Sei só o valor da parcela</button>
+            </div>
+
+            <div class="calc-grid">
+
+              <div class="calc-field">
+                <label for="cTribunal">Estado do contrato</label>
+                <select id="cTribunal"></select>
+              </div>
+
+              <div class="calc-field">
+                <label for="cMes">Mês e ano da contratação</label>
+                <div class="calc-pair">
+                  <select id="cMes" aria-label="Mês da contratação"></select>
+                  <select id="cAno" aria-label="Ano da contratação"></select>
+                </div>
+              </div>
+
+              <div class="calc-field">
+                <label for="cValor">Valor financiado (R$)</label>
+                <input id="cValor" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 45.000">
+              </div>
+
+              <div class="calc-field">
+                <label for="cPrazo">Prazo (nº de parcelas)</label>
+                <input id="cPrazo" type="text" inputmode="numeric" autocomplete="off" placeholder="Ex.: 48">
+              </div>
+
+              <div class="calc-field" data-show="taxa">
+                <label for="cTaxa">Taxa de juros mensal (%)</label>
+                <input id="cTaxa" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 2,45">
+                <p class="calc-hint">Está no contrato, como "taxa de juros mensal" ou "% a.m.".</p>
+              </div>
+
+              <div class="calc-field" data-show="parcela" hidden>
+                <label for="cParcela">Valor da parcela (R$)</label>
+                <input id="cParcela" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 1.600">
+                <p class="calc-hint">A calculadora descobre a taxa a partir da parcela.</p>
+              </div>
+
+              <div class="calc-field">
+                <label for="cPagas">Parcelas já pagas</label>
+                <input id="cPagas" type="text" inputmode="numeric" autocomplete="off" placeholder="Ex.: 12">
+              </div>
+
+              <div class="calc-field full">
+                <label for="cSeguros">Seguros e tarifas financiados (R$) <small>· opcional</small></label>
+                <input id="cSeguros" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: 2.500">
+                <p class="calc-hint">Seguro prestamista, tarifa de cadastro, registro e avaliação, quando somados ao valor financiado.</p>
+              </div>
+
+              <div class="calc-field full">
+                <div class="calc-checks">
+                  <label><input type="checkbox" id="cAtraso"> Contrato em atraso</label>
+                  <label><input type="checkbox" id="cRefin"> Contrato refinanciado</label>
+                </div>
+              </div>
+
+            </div>
+          </form>
+
+          <div class="calc-result" id="calcResult" aria-live="polite">
+            <div class="calc-empty">
+              <strong>Preencha os dados ao lado</strong>
+              O resultado aparece aqui e é recalculado a cada alteração.
+            </div>
+          </div>
+
+        </div>
+
+        <details class="calc-method">
+          <summary>Como o cálculo é feito</summary>
+          <p>
+            Usamos a série 20749 do Banco Central, com a taxa média das novas operações
+            de financiamento de veículos para pessoa física, no mês da contratação. A taxa
+            anual divulgada é convertida em taxa mensal.
+          </p>
+          <p>
+            As parcelas são recalculadas pela Tabela Price, na taxa do contrato e na taxa média,
+            sobre o mesmo valor financiado (somados os seguros e tarifas informados). A diferença
+            entre as duas parcelas é o excesso mensal. Multiplicado pelas parcelas pagas, indica
+            o valor pago acima da média; nas parcelas restantes, a economia potencial.
+          </p>
+          <p>
+            Há indício de abusividade quando a taxa contratada supera a média multiplicada pelo
+            critério do tribunal (1,5 vez na maioria dos estados). Os valores são estimativas e
+            podem variar conforme encargos, mora, seguros e o entendimento de cada juízo. A simulação
+            não substitui a análise do contrato.
+          </p>
+        </details>
 
       </div>
     </section>
@@ -1535,6 +2057,275 @@
           "noopener,noreferrer"
         );
       });
+  </script>
+
+  <!-- =========================
+       CALCULADORA (script)
+  ========================== -->
+  <script>
+  (function () {
+    var NUM = "5586999765214";
+
+    // Cópia de reserva da série SGS 20749 (% a.a.), usada se a API do BACEN não responder.
+    var RESERVA_ATE = "2026-09";
+    var RESERVA = "2012-01:25.49,2012-02:25.58,2012-03:25.41,2012-04:24.75,2012-05:22.57,2012-06:20.23,2012-07:20.70,2012-08:20.31,2012-09:21.09,2012-10:20.51,2012-11:20.47,2012-12:19.75,2013-01:20.53,2013-02:20.71,2013-03:19.73,2013-04:19.92,2013-05:19.73,2013-06:19.47,2013-07:20.28,2013-08:21.24,2013-09:21.60,2013-10:20.83,2013-11:21.28,2013-12:21.29,2014-01:22.74,2014-02:23.85,2014-03:23.54,2014-04:22.62,2014-05:22.99,2014-06:23.02,2014-07:23.14,2014-08:23.23,2014-09:22.78,2014-10:23.04,2014-11:22.67,2014-12:22.34,2015-01:23.84,2015-02:24.76,2015-03:24.67,2015-04:24.55,2015-05:24.81,2015-06:24.71,2015-07:24.50,2015-08:24.79,2015-09:25.57,2015-10:25.89,2015-11:26.18,2015-12:26.01,2016-01:27.48,2016-02:27.56,2016-03:27.01,2016-04:26.77,2016-05:26.33,2016-06:25.97,2016-07:25.99,2016-08:26.17,2016-09:26.13,2016-10:25.75,2016-11:25.85,2016-12:25.70,2017-01:26.18,2017-02:25.71,2017-03:24.80,2017-04:24.39,2017-05:24.25,2017-06:24.03,2017-07:23.79,2017-08:23.22,2017-09:22.96,2017-10:22.51,2017-11:22.14,2017-12:22.23,2018-01:22.74,2018-02:22.47,2018-03:21.75,2018-04:21.53,2018-05:21.49,2018-06:21.96,2018-07:22.34,2018-08:22.17,2018-09:22.17,2018-10:22.36,2018-11:21.68,2018-12:21.68,2019-01:22.36,2019-02:22.01,2019-03:21.38,2019-04:21.26,2019-05:21.10,2019-06:20.80,2019-07:20.34,2019-08:20.10,2019-09:19.79,2019-10:19.65,2019-11:19.29,2019-12:19.15,2020-01:19.73,2020-02:19.40,2020-03:19.76,2020-04:20.38,2020-05:19.46,2020-06:18.99,2020-07:18.88,2020-08:18.88,2020-09:18.56,2020-10:18.88,2020-11:18.97,2020-12:19.20,2021-01:20.21,2021-02:19.96,2021-03:20.64,2021-04:21.31,2021-05:21.29,2021-06:21.59,2021-07:21.94,2021-08:22.65,2021-09:23.90,2021-10:24.81,2021-11:27.45,2021-12:26.79,2022-01:26.87,2022-02:26.46,2022-03:27.15,2022-04:27.23,2022-05:27.15,2022-06:27.43,2022-07:27.64,2022-08:27.42,2022-09:27.10,2022-10:27.20,2022-11:27.65,2022-12:28.68,2023-01:29.05,2023-02:28.96,2023-03:28.58,2023-04:28.46,2023-05:28.08,2023-06:26.81,2023-07:26.06,2023-08:26.18,2023-09:25.95,2023-10:26.19,2023-11:25.98,2023-12:25.52,2024-01:26.07,2024-02:25.85,2024-03:25.43,2024-04:25.44,2024-05:25.54,2024-06:25.52,2024-07:25.45,2024-08:25.72,2024-09:25.51,2024-10:25.90,2024-11:26.39,2024-12:27.51,2025-01:29.52,2025-02:29.14,2025-03:28.59,2025-04:28.06,2025-05:27.61,2025-06:27.59,2025-07:27.29,2025-08:27.34,2025-09:27.30,2025-10:27.43,2025-11:27.02,2025-12:26.44,2026-01:27.72,2026-02:27.28,2026-03:26.60,2026-04:26.64,2026-05:26.31,2026-06:26.44,2026-07:26.52,2026-08:26.42,2026-09:26.18";
+
+    // Critério de cada tribunal (múltiplo da média). 0 = sem critério automático.
+    var TRIB = [
+      ["AC","TJAC",2],["AL","TJAL",1.5],["AP","TJAP",1.5],["AM","TJAM",3],["BA","TJBA",1.5],
+      ["CE","TJCE",1.5],["DF","TJDFT",0],["ES","TJES",1.5],["GO","TJGO",1.5],["MA","TJMA",1.5],
+      ["MG","TJMG",1.5],["MS","TJMS",1.5],["MT","TJMT",1.5],["PA","TJPA",1.5],["PB","TJPB",1.5],
+      ["PE","TJPE",1.5],["PI","TJPI",1.5],["PR","TJPR",1.5],["RJ","TJRJ",1.5],["RN","TJRN",1.5],
+      ["RO","TJRO",1.5],["RR","TJRR",1.5],["RS","TJRS",1.8],["SC","TJSC",1.1],["SE","TJSE",1.2],
+      ["SP","TJSP",1.5],["TO","TJTO",1.5]
+    ];
+    var MESES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+    var MESES_LONGOS = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+
+    var serie = {};
+    RESERVA.split(",").forEach(function (p) {
+      var kv = p.split(":");
+      serie[kv[0]] = parseFloat(kv[1]);
+    });
+
+    var $ = function (id) { return document.getElementById(id); };
+    var form = $("calcForm"), out = $("calcResult"), status = $("calcStatus");
+    var modo = "taxa", jaRegistrou = false;
+
+    // ---------- Campos ----------
+    var trib = $("cTribunal");
+    trib.innerHTML = TRIB.map(function (t) {
+      var crit = t[2] ? " (" + String(t[2]).replace(".", ",") + "x a média)" : " (sem critério automático)";
+      return '<option value="' + t[0] + '"' + (t[0] === "PI" ? " selected" : "") + ">" + t[0] + " · " + t[1] + crit + "</option>";
+    }).join("");
+
+    $("cMes").innerHTML = '<option value="">Mês</option>' + MESES_LONGOS.map(function (m, i) {
+      return '<option value="' + String(i + 1).padStart(2, "0") + '">' + m + "</option>";
+    }).join("");
+
+    var anoAtual = new Date().getFullYear();
+    var anos = '<option value="">Ano</option>';
+    for (var a = anoAtual; a >= 2012; a--) anos += '<option value="' + a + '">' + a + "</option>";
+    $("cAno").innerHTML = anos;
+
+    form.querySelectorAll(".calc-mode button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        modo = b.getAttribute("data-mode");
+        form.querySelectorAll(".calc-mode button").forEach(function (x) {
+          x.setAttribute("aria-pressed", x === b ? "true" : "false");
+        });
+        form.querySelectorAll("[data-show]").forEach(function (el) {
+          el.hidden = el.getAttribute("data-show") !== modo;
+        });
+        calcula();
+      });
+    });
+
+    form.addEventListener("input", calcula);
+    form.addEventListener("change", calcula);
+    form.addEventListener("submit", function (e) { e.preventDefault(); });
+
+    // ---------- Utilitários ----------
+    function num(v) {
+      v = String(v || "").replace(/[R$\s%]/g, "");
+      if (!v) return NaN;
+      if (v.indexOf(",") > -1) v = v.replace(/\./g, "").replace(",", ".");
+      else if (/^\d{1,3}(\.\d{3})+$/.test(v)) v = v.replace(/\./g, "");
+      return parseFloat(v);
+    }
+    function brl(v) { return v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
+    function pct(v) { return (v * 100).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "%"; }
+    function vezes(v) { return v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "x"; }
+    function rotulo(k) { return MESES[parseInt(k.slice(5), 10) - 1] + "/" + k.slice(0, 4); }
+    function mensal(anual) { return Math.pow(1 + anual / 100, 1 / 12) - 1; }
+    function pmt(P, i, n) { return i === 0 ? P / n : P * i / (1 - Math.pow(1 + i, -n)); }
+    function taxaPelaParcela(P, parc, n) {
+      if (parc * n <= P) return 0;
+      var lo = 0, hi = 0.3;
+      for (var k = 0; k < 100; k++) {
+        var mid = (lo + hi) / 2;
+        if (pmt(P, mid, n) > parc) hi = mid; else lo = mid;
+      }
+      return (lo + hi) / 2;
+    }
+    function chaves() { return Object.keys(serie).sort(); }
+    function mediaDoMes(k) {
+      if (serie[k] != null) return { chave: k, anual: serie[k], aproximada: false };
+      var ks = chaves();
+      if (k > ks[ks.length - 1]) k = ks[ks.length - 1];
+      else if (k < ks[0]) k = ks[0];
+      return { chave: k, anual: serie[k], aproximada: true };
+    }
+    function registra(evento, dados) {
+      window.dataLayer = window.dataLayer || [];
+      var o = { event: evento };
+      for (var c in dados) o[c] = dados[c];
+      window.dataLayer.push(o);
+    }
+
+    // ---------- Gráfico ----------
+    function grafico(chave, ic, limite) {
+      var ks = chaves(), fim = ks.indexOf(chave);
+      var pts = ks.slice(Math.max(0, fim - 12), fim + 1).map(function (k) { return { k: k, v: mensal(serie[k]) }; });
+      if (pts.length < 2) return "";
+      var W = 560, H = 190, L = 44, R = 10, T = 12, B = 26;
+      var vals = pts.map(function (p) { return p.v; }).concat([ic]);
+      if (limite) vals.push(limite);
+      var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
+      var pad = (mx - mn) * 0.15 || 0.002; mn -= pad; mx += pad;
+      var x = function (i) { return L + i * (W - L - R) / (pts.length - 1); };
+      var y = function (v) { return T + (mx - v) * (H - T - B) / (mx - mn); };
+      var linha = pts.map(function (p, i) { return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(p.v).toFixed(1); }).join(" ");
+      var s = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Taxa do contrato comparada à média do Banco Central">';
+      [mn + pad, (mn + mx) / 2, mx - pad].forEach(function (v) {
+        s += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="rgba(255,255,255,.08)"/>';
+        s += '<text x="' + (L - 6) + '" y="' + (y(v) + 4) + '" text-anchor="end" font-size="11" fill="#8C847C">' + (v * 100).toFixed(1).replace(".", ",") + "%</text>";
+      });
+      if (limite) s += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(limite) + '" y2="' + y(limite) + '" stroke="#8C847C" stroke-width="2" stroke-dasharray="2 4"/>';
+      s += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(ic) + '" y2="' + y(ic) + '" stroke="#F2C9A8" stroke-width="2" stroke-dasharray="7 5"/>';
+      s += '<path d="' + linha + '" fill="none" stroke="#CDB89F" stroke-width="2.5" stroke-linejoin="round"/>';
+      s += '<circle cx="' + x(pts.length - 1) + '" cy="' + y(pts[pts.length - 1].v) + '" r="4" fill="#CDB89F"/>';
+      [0, Math.floor((pts.length - 1) / 2), pts.length - 1].forEach(function (i) {
+        s += '<text x="' + x(i) + '" y="' + (H - 6) + '" text-anchor="' + (i === 0 ? "start" : i === pts.length - 1 ? "end" : "middle") + '" font-size="11" fill="#8C847C">' + rotulo(pts[i].k) + "</text>";
+      });
+      return s + "</svg>";
+    }
+
+    // ---------- Cálculo ----------
+    function vazio(msg) {
+      out.innerHTML = '<div class="calc-empty"><strong>Preencha os dados ao lado</strong>' + msg + "</div>";
+    }
+
+    function calcula() {
+      var t = TRIB.filter(function (x) { return x[0] === trib.value; })[0];
+      var mes = $("cMes").value, ano = $("cAno").value;
+      var valor = num($("cValor").value), prazo = Math.round(num($("cPrazo").value));
+      var pagas = Math.round(num($("cPagas").value));
+      var seguros = num($("cSeguros").value); if (!(seguros > 0)) seguros = 0;
+      var atraso = $("cAtraso").checked, refin = $("cRefin").checked;
+
+      if (!mes || !ano) return vazio("Informe o mês e o ano em que o contrato foi assinado.");
+      if (!(valor > 0)) return vazio("Informe o valor financiado.");
+      if (!(prazo > 0)) return vazio("Informe o prazo do contrato, em número de parcelas.");
+      if (isNaN(pagas)) pagas = 0;
+      if (pagas < 0 || pagas > prazo) return vazio("As parcelas pagas não podem passar do prazo do contrato.");
+
+      var P = valor + seguros, ic;
+      if (modo === "taxa") {
+        var tx = num($("cTaxa").value);
+        if (!(tx > 0)) return vazio("Informe a taxa de juros mensal do contrato.");
+        ic = tx / 100;
+      } else {
+        var parc = num($("cParcela").value);
+        if (!(parc > 0)) return vazio("Informe o valor da parcela.");
+        if (parc * prazo <= P) return vazio("A parcela informada não cobre o valor financiado nesse prazo. Confira os valores.");
+        ic = taxaPelaParcela(P, parc, prazo);
+      }
+
+      var m = mediaDoMes(ano + "-" + mes);
+      var im = mensal(m.anual), mult = t[2], limite = mult ? im * mult : 0;
+      var razao = ic / im;
+      var pC = pmt(P, ic, prazo), pM = pmt(P, im, prazo);
+      var excesso = Math.max(0, pC - pM);
+      var pagoAMais = excesso * pagas, economia = excesso * (prazo - pagas);
+      var abusivo = mult > 0 && ic > limite;
+      var resultado = mult === 0 ? "sem_criterio" : abusivo ? "indicio" : "dentro";
+
+      var h = '<div class="calc-verdict-label">Resultado da simulação</div>';
+      if (mult === 0) {
+        h += '<div class="calc-verdict">Análise individual</div>';
+        h += '<p class="calc-lead">O ' + t[1] + " não adota um múltiplo fixo da média. Sua taxa está " + vezes(razao) + " a média do Banco Central, e a avaliação depende do contrato.</p>";
+      } else if (abusivo) {
+        h += '<div class="calc-verdict is-alert">Indício de abusividade</div>';
+        h += '<p class="calc-lead">Sua taxa está ' + vezes(razao) + " a média do Banco Central, acima do critério de " + String(mult).replace(".", ",") + "x adotado pelo " + t[1] + ". Esse excesso pode fundamentar a revisão do contrato.</p>";
+      } else {
+        h += '<div class="calc-verdict">Taxa dentro do critério</div>';
+        h += '<p class="calc-lead">Sua taxa está ' + vezes(razao) + " a média do Banco Central, sem passar do critério de " + String(mult).replace(".", ",") + "x do " + t[1] + ". Seguros, tarifas e venda casada ainda podem ser questionados mesmo assim.</p>";
+      }
+
+      h += '<div class="calc-compare">' +
+        "<div><span>Taxa do contrato" + (modo === "parcela" ? " (calculada)" : "") + "</span><b>" + pct(ic) + "</b></div>" +
+        "<div><span>Média BACEN " + rotulo(m.chave) + "</span><b>" + pct(im) + "</b></div>" +
+        "<div><span>Limite " + t[1] + "</span><b>" + (mult ? pct(limite) : "—") + "</b></div></div>";
+
+      if (atraso) h += '<div class="calc-flag">Contrato em atraso: há medidas para proteger o veículo e negociar, e o caso merece análise independentemente da taxa.</div>';
+      if (refin) h += '<div class="calc-flag">Contrato refinanciado: o contrato anterior também pode ter cobranças a revisar.</div>';
+
+      h += '<div class="calc-numbers">';
+      if (excesso > 0.005) {
+        if (pagas > 0) h += '<div class="calc-number is-main"><span>Pago acima da média em ' + pagas + " parcela" + (pagas === 1 ? "" : "s") + "</span><b>" + brl(pagoAMais) + "</b></div>";
+        h += '<div class="calc-number"><span>Diferença por parcela</span><b>' + brl(excesso) + "</b></div>";
+        if (prazo > pagas) h += '<div class="calc-number"><span>Nas ' + (prazo - pagas) + " parcelas restantes</span><b>" + brl(economia) + "</b></div>";
+      } else {
+        h += '<div class="calc-number"><span>Parcela pela taxa do contrato</span><b>' + brl(pC) + "</b></div>";
+        h += '<div class="calc-number"><span>Total de juros no contrato</span><b>' + brl(pC * prazo - P) + "</b></div>";
+      }
+      h += "</div>";
+
+      if (abusivo && pagoAMais > 0) {
+        h += '<p class="calc-note">Valores pagos indevidamente podem ser pedidos de volta em dobro (CDC, art. 42), conforme o caso: ' + brl(pagoAMais * 2) + ".</p>";
+      }
+      if (seguros > 0) {
+        h += '<p class="calc-note">Valor considerado no cálculo, com seguros e tarifas: ' + brl(P) + ".</p>";
+      }
+
+      h += '<div class="calc-chart">' + grafico(m.chave, ic, limite) +
+        '<div class="calc-legend"><span><i></i>Média BACEN (% a.m.)</span><span><i class="dash"></i>Sua taxa</span>' +
+        (mult ? '<span><i class="dot"></i>Limite ' + t[1] + "</span>" : "") + "</div></div>";
+
+      var msg = "Olá! Fiz a simulação da calculadora de financiamento no site." +
+        "\nContratação: " + rotulo(ano + "-" + mes) + " · Estado: " + t[0] +
+        "\nValor financiado: " + brl(valor) + (seguros ? " + " + brl(seguros) + " de seguros/tarifas" : "") +
+        "\nPrazo: " + prazo + " parcelas · Pagas: " + pagas +
+        "\nTaxa do contrato: " + pct(ic) + " a.m." + (modo === "parcela" ? " (calculada pela parcela)" : "") +
+        " · Média BACEN: " + pct(im) + " a.m." +
+        "\nResultado: " + (mult === 0 ? "análise individual" : abusivo ? "indício de abusividade (" + vezes(razao) + " a média)" : "taxa dentro do critério") +
+        (atraso ? "\nContrato em atraso." : "") + (refin ? "\nContrato refinanciado." : "") +
+        "\n\nGostaria de uma análise do meu contrato.";
+      var rotuloBotao = abusivo ? "Quero analisar meu contrato" : atraso ? "Falar sobre meu contrato em atraso" : "Quero uma análise completa do contrato";
+
+      h += '<a class="btn btn-light calc-wa" data-resultado="' + resultado + '" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + NUM + "?text=" + encodeURIComponent(msg) + '">' + rotuloBotao + "</a>";
+      h += '<p class="calc-disclaimer">Simulação estimativa, baseada na média oficial do Banco Central e na Tabela Price' +
+        (m.aproximada ? " (média de " + rotulo(m.chave) + ", a mais próxima disponível)" : "") +
+        ". Não substitui a análise jurídica do contrato.</p>";
+
+      out.innerHTML = h;
+
+      if (!jaRegistrou) {
+        jaRegistrou = true;
+        registra("simulacao_calculadora", { resultado: resultado });
+      }
+    }
+
+    out.addEventListener("click", function (e) {
+      var a = e.target.closest(".calc-wa");
+      if (a) registra("clique_whatsapp", { local: "calculadora", resultado: a.getAttribute("data-resultado") });
+    });
+
+    // ---------- Média ao vivo do BACEN ----------
+    function marca(ao_vivo) {
+      var ks = chaves();
+      status.textContent = (ao_vivo ? "BACEN ao vivo" : "Média do BACEN") + " · série 20749 · até " + rotulo(ks[ks.length - 1]);
+      status.classList.toggle("is-live", ao_vivo);
+    }
+    marca(false);
+
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+    fetch("https://api.bcb.gov.br/dados/serie/bcdata.sgs.20749/dados?formato=json&dataInicial=01/01/2012", ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        clearTimeout(timer);
+        if (!Array.isArray(d) || !d.length) return;
+        d.forEach(function (x) {
+          var v = parseFloat(String(x.valor).replace(",", "."));
+          if (!isNaN(v)) serie[x.data.slice(6) + "-" + x.data.slice(3, 5)] = v;
+        });
+        marca(true);
+        calcula();
+      })
+      .catch(function () { clearTimeout(timer); });
+  })();
   </script>
 
 </body>
