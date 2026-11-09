@@ -90,3 +90,5 @@ footer{padding-bottom:96px}
 .corpo a{color:var(--s);text-decoration:underline;text-underline-offset:2px}
 .lt{list-style:none;padding:0!important;margin-top:10px!important}.lt li{margin-top:8px}
 .autor a{color:var(--s);font-weight:600;text-decoration:underline}
+.corpo a.btn{margin-top:16px;color:#fff;text-decoration:none}
+.corpo td,.corpo th{line-height:1.5}
